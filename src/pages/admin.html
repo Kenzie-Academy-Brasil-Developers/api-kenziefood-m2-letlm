@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    
+    <header>
+       <div class="nameHomepage">
+            <p>Kenzie </p>
+            <p>Food</p>
+       </div>
+       <div class="searchAdmin">
+            <input type="text">
+            <button class="adminProfile">
+                <img class="iconAdmin" src="/public/images/iconProfileAdmin.png alt="Página do administrador">
+            </button>
+        </div>
+
+    </header>
+    <main>
+        <div class="buttonsSearch">
+            <button class="all"> Todos</button>
+            <button class="bread"><img class="iconBread" src="/public/images/iconBread.png" alt="Imagem de Pão">Panificadora</button>
+            <button class="fruits"><img class="iconFruits" src="/public/images/IconFruits.png" alt="Imagem de Frutas">Frutas</button>
+            <button class="wine"><img class="iconGlassWine" src="/public/images/iconGlassWine.png" alt="Imagem de Bebidas">Bebidas</button>
+            <button class="addProductCard">Adicionar novo produto</button>
+        </div>
+
+        <div class="template">
+            <ul class="productsAdd">
+                <span>Produto</span>
+                <span>Categorias</span>
+                <span>Descrição</span>
+                <span>Ações</span>
+
+                <li>
+                    <div class="productsAndCategory">
+                        <img class="imgProduct" src="/public/images/iconBread.png" alt="">
+                        <span class="nameProduct">Panqueca de banana com aveia</span>
+                        <span class="category">Bebidas</span>
+                        <span class="category">Frutas</span>
+                    </div>
+
+                    <div class="descriptionAndAction">
+                        <span class="descriptionProduct">Esta receita serve muito bem 2 pessoas...</span>
+                        <button class="editProduct"> <img src="/public/images/iconEdit.png" alt=""></button>
+                        <button class="deleteProduct"> <img src="/public/images/iconDelete.png" alt=""></button>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </main>
+
+    <div id="modal" class="mostrarModal">
+        <div class="boxModal">
+            <h2>Email inserido já cadastrado!</h2>
+            <button class="fechar">Fechar</button>
+        </div>
+    </div>
+
+    <div id="modal" class="mostrarModal">
+        <div class="boxModal">
+            <h2>Email inserido já cadastrado!</h2>
+            <button class="fechar">Fechar</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/controllers/registerProducts.js"></script>
+</body>
+</html>
