@@ -37,7 +37,7 @@
                 <span>Descrição</span>
                 <span>Ações</span>
 
-                <li>
+                <!-- <li> APENAS MODELO PARA VERIFICAR O CSS 
                     <div class="productsAndCategory">
                         <img class="imgProduct" src="/public/images/iconBread.png" alt="">
                         <span class="nameProduct">Panqueca de banana com aveia</span>
@@ -50,23 +50,29 @@
                         <button class="editProduct"> <img src="/public/images/iconEdit.png" alt=""></button>
                         <button class="deleteProduct"> <img src="/public/images/iconDelete.png" alt=""></button>
                     </div>
-                </li>
+                </li> -->
             </ul>
 
         </div>
     </main>
 
-    <div id="modal" class="mostrarModal">
-        <div class="boxModal">
-            <h2>Email inserido já cadastrado!</h2>
-            <button class="fechar">Fechar</button>
+    <div id="modalStatusOk" class="showModalStatusOk">
+        <div class="boxModalStatus">
+            <div>
+                <span class="status">Status</span>
+                <button class="btnExit">X</button>
+            </div>
+            <span class="messageStatus">Produto adicionado com sucesso</span>
         </div>
     </div>
 
-    <div id="modal" class="mostrarModal">
-        <div class="boxModal">
-            <h2>Email inserido já cadastrado!</h2>
-            <button class="fechar">Fechar</button>
+    <div id="modalStatusError" class="showModalStatusError">
+        <div class="boxModalStatus">
+            <div>
+                <span class="status">Status</span>
+                <button class="btnExit">X</button>
+            </div>
+            <span class="messageStatus">Ocorreu algum erro, o produto não foi adicionado</span>
         </div>
     </div>
 
