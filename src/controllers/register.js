@@ -1,38 +1,38 @@
-import {KenzieFood} from "../requests/requests.js"
+import { KenzieFood } from "../requests/requests.js"
 
-class Register{
-    static form = document.querySelector("form")
+class Register {
+    static btnForm = document.querySelector('button')
 
-    static start(){
-        this.form.addEventListener("submit", this.acess.bind(this))
+    static start() {
+        this.btnForm.addEventListener("click", this.acess.bind(this))
     }
 
     static acess(event) {
         event.preventDefault()
-
-        const inputs = event.target
-
+        const forms = document.querySelector("form")
         const newAcess = {}
 
-        for(let i =0; i < inputs.length; i++){
-            if(inputs[i].name) {
-                const name     = inputs[i].name
-                const value    = inputs[i].name
-
+        for (let i = 0; i < forms.length; i++) {
+            const { name, value } = forms[i]
+            if (name) {
+                if (value === "") {
+                    return alert("Preencha os dados corretamente.")
+                }
                 newAcess[name] = value
             }
-            inputs[i].value = ""
+            forms[i].value = ""
         }
         KenzieFood.register(newAcess)
-        .then(data => {
-            if(data.status === "error"){
-                alert("erro")
-            } else{
-                alert("tuydo ok")
-            }
-        })
+            .then(data => {
+                if (data.status === "Error") {
+                    alert("erro") // trocar por modal
+                } else {
+                    alert("tudo ok") // trocar por modal
+                }
+            })
     }
-    
+
 }
 
-export {Register}
+Register.start()
+export { Register }
