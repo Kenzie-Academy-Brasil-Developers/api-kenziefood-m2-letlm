@@ -8,6 +8,7 @@
     --color-secondary-50: #E4F7EF;
     --color-primary: #FF2253;
     --color-primary-50: #FFE9EE;
+    --color-background-1 : #FFF7F4;
   }
 
 body {
@@ -24,8 +25,9 @@ header {
     height: 115px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
+    margin-left: 27px;
 }
 
 input:focus{
@@ -73,9 +75,8 @@ header button {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 54px;
+    flex-direction: column-reverse;
+    
 }
 
 h1 {
@@ -148,7 +149,7 @@ main section {
     align-items: center;
     display: flex;
     justify-content: center;
-    border-radius: 12px 12px 0px 0px;
+    border-radius: 0px 0px 12px 10px;
 }
 
 #emptyCar img {
@@ -160,7 +161,7 @@ main section {
 #emptyCar {
     width: 319px;
     height: 296px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-content: center;
@@ -211,15 +212,21 @@ main section {
 }
 
 main img {
-   
+    border: 3px solid var(--color-primary-50);
+    border-radius: 8px;
 }
 
 main h2 {
-   
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 main p {
-    
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-gray-3);
 }
 
 .add {
@@ -256,8 +263,12 @@ button:hover {
 }
 
 .button button {
-    background-color: var(--color-white);
+    background-color: var(--color-background-1);
     transition: 0.4s;
+}
+
+.categoria{
+    display: none;
 }
 
 .button button:hover {
@@ -330,8 +341,24 @@ button:hover {
     }
 
     .vitrine {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .title {
+        border-radius: 12px 12px 0px 0px;
+    }
+    #cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         
     }
+    #emptyCar {
+        display: flex;
+    }
+
 }
 
 @media(min-width:1440px) {

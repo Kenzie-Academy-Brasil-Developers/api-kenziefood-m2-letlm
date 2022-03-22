@@ -51,7 +51,10 @@ class Vitrine {
         return div
         };
 
+        
+
     }
+
 
 
 Vitrine.listaProdutos()
