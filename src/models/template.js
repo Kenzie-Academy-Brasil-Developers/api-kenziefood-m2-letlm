@@ -1,27 +1,19 @@
 import { KenzieFood } from "../requests/requests.js";
 
-
-
 class Vitrine {
 
-
+    
     static main = document.getElementById('mainProducts')
-
+    
     static async listaProdutos(){
+
         this.main.innerText = ""
         const products = await KenzieFood.getPublic()
-        console.log(products)
-            for(let i = 0; i < products.length; i++){
-                console.log(products[i])
-                const templateProducts = this.createVitrine(products[i])
-                this.main.appendChild(templateProducts[i])
-            }
-
-           
-            
         
-        
-
+        products.forEach((product) => {
+            const templateProducts = this.createVitrine(product)
+            this.main.appendChild(templateProducts)
+        })
     }
 
     static createVitrine({ categoria, descricao, imagem, nome, preco, id }){
@@ -55,12 +47,14 @@ class Vitrine {
         section.appendChild(price);
         section.appendChild(button)
         div.appendChild(section)
-        this.main.appendChild(div)
-            
+        
+        return div
         };
 
     }
 
 
 Vitrine.listaProdutos()
+
+export {Vitrine}
 
