@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/reset.css">
+    <link rel="stylesheet" href="public/style.css">
+    <title>Kenzie Food</title>
+</head>
+
+<body>
+    <header>
+        <img src="public/images/kenziefoodlogo.png" alt="logo kenzie">
+        <div class="inputButton">
+            <input type="text" placeholder="Pesquisa por produto" class="input">
+            <button><img src="public/images/search.jpg" alt="search"></button>
+        </div>
+    </header>
+    <div class="button">
+        <!--filtros-->
+        <button class="todos">Todos</button>
+        <button class="bebidas">🥂 Bebidas</button>
+        <button class="panificadora">🥖 Panificadora</button>
+        <button class="frutas">🍉 Frutas</button>
+    </div>
+    <div class="vitrine">
+        <main id="mainProducts">
+
+            <!--produtos-->
+
+        </main>
+
+        <section id="cart">
+
+            <!--carrinho-->
+
+            <div id="title">
+                <img src="public/images/carrinho.png" alt="">
+                <h1>Carrinho</h1>
+            </div>
+            <div id="emptyCar">
+
+                <!-- carrinho vazio -->
+
+                <img src="public/images/cart.png" alt="carrinho">
+                <span>Ops!</span>
+                <p>Por enquanto não temos produto no carrinho</p>
+            </div>
+
+            <div class="scroll">
+                <div id="itemsToBuy"></div>
+            </div>
+
+            <!--span quando carrinho vazio-->
+
+            <div id="balance">
+                <div class="flex">
+                    <section>
+                        <span>Quantidade</span>
+                        <span id="quantity">0</span>
+                    </section>
+                    <section>
+                        <span>Preço</span>
+                        <span id="price">R$ 0</span>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
