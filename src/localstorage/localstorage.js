@@ -7,3 +7,5 @@ class Local{
         "products": {}
     }
 }
+
+export {Local}
