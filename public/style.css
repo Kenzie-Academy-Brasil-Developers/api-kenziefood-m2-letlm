@@ -1,0 +1,355 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-1: #F8F9FA;
+    --color-gray-3: #868E96;
+    --color-gray-4: #212529;
+    --color-secondary: #4ACA94;
+    --color-secondary-50: #E4F7EF;
+    --color-primary: #FF2253;
+    --color-primary-50: #FFE9EE;
+  }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+header {
+    height: 72px;
+    min-width: 300px;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input:focus{
+    outline: none;
+}
+
+.inputButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-gray-1);
+    border-radius: 12px;
+    width: 300px;
+    height: 20px;
+    padding: 10px 3px 13px 7px;
+}
+
+.inputButton:focus-within{
+    border: 1.5px solid var(--color-gray-4);
+}
+
+.inputButton button{
+    width: 30px;
+    height: 30px;
+    
+}
+
+.inputButton button:hover {
+    transition: 0.4s;
+   
+}
+
+div button img {
+    width: 15px;
+    height: 15px;
+}
+
+header button {
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-gray-1);
+}
+
+#cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 54px;
+}
+
+h1 {
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+header img {
+    width: 123px;
+    height: 40px;
+}
+
+header input {
+    width: 200px;
+    height: 33px;
+    border-radius: 30px;
+    text-align: center;
+    margin: 10px 0;
+    border: none;
+    background-color: var(--color-gray-1);
+    
+}
+
+
+main {
+    display: flex;
+    overflow: scroll;
+}
+
+main div {
+    width: 300px;
+    height: 400px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main div h2 {
+    font-weight: bold;
+}
+
+main img {
+    max-width: 300px;
+    width: 300px;
+    height: 200px;
+}
+
+main img:hover {
+    transition: 0.4s;
+    border: solid var(--color-primary) 3px;
+}
+
+main section {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.price {
+    color: var(--color-black);
+    font-weight: bold;
+}
+
+.title {
+    background-color: var(--color-primary);
+    width: 320px;
+    height: 56px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px 12px 0px 0px;
+}
+
+#emptyCar img {
+    width: 50px;
+    height: 50px;
+    margin-left: 42%;
+}
+
+#emptyCar {
+    width: 319px;
+    height: 296px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background: var(--color-gray-1);
+    font-size: 14px;
+    color: var(--color-gray-3);
+}
+
+#itemsToBuy {
+    
+}
+
+.scroll{
+    
+}
+
+#itemsToBuy div {
+    
+}
+
+#itemsToBuy section {
+    
+}
+
+#itemsToBuy img {
+    
+}
+
+#itemsToBuy p, #itemsToBuy span {
+    
+}
+
+#itemsToBuy p {
+    
+}
+
+.typeBasket {
+    
+}
+
+.priceBasket {
+    
+}
+
+#itemsToBuy button {
+    
+}
+
+main img {
+   
+}
+
+main h2 {
+   
+}
+
+main p {
+    
+}
+
+.add {
+  
+}
+
+.add:hover{
+    
+}
+
+.button {
+    display: flex;
+    margin: 20px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.all, .bakery, .fruits, .drinks {
+    width: 109px;
+    height: 25px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: var(--color-gray-4);
+    margin-top: -15px;
+    margin-left: 10px;
+    border: none;
+}
+
+.button button {
+    background-color: var(--color-white);
+    transition: 0.4s;
+}
+
+.button button:hover {
+    transition: 0.5s;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid #8c8e92;
+}
+
+
+#balance {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 290px;
+    height: 120px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.flex section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 0;
+}
+
+@media(min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        max-width: 1600px;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    header {
+        padding: 0px 30px;
+        min-width: 700px;
+        align-items: center;
+        height: 80px;
+        background: var(--color-white);
+        margin-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .button {
+        justify-content: flex-start;
+    }
+
+}
+
+@media(min-width: 1024px) {
+    main {
+        width: 1000px;
+    }
+
+    header {
+        padding: 0px 40px;
+    }
+
+    .vitrine {
+        
+    }
+}
+
+@media(min-width:1440px) {
+    header {
+        padding: 0px 70px;
+    }
+
+    .button {
+        padding: 0px 25px;
+    }
+}
+
+@media(min-width:1600px) {
+    header {
+        padding: 0px 150px;
+    }
+
+    .button {
+        padding: 0px 105px;
+    }
+}
