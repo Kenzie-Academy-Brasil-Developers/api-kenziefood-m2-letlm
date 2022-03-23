@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+:root{
+    --color-white: #FFFFFF;
+    --color-gray-1: #F8F9FA;
+    --color-gray-3: #868E96;
+    --color-secondary: #4ACA94;
+    --color-secondary-50: #E4F7EF;
+    --color-primary: #FF2253;
+    --color-primary-50: #FFE9EE;
+    --color-primary-10: rgba(248, 249, 250, 1);
+    --color-gray-2:#F3EEF5;
+    --color-gray-4: #E9ECEF;
+    --color-gray-5: #868E96;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 140px;
+    align-items: center;
+}
+
+.nameHomepage {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 342px;
+    justify-content: space-between;
+}
+
+.letters {
+    display: flex;
+    align-items: center;
+}
+
+.textKenzie {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21.6949px;
+    line-height: 33px;
+    color: #212529;
+}
+
+.textFood {
+    margin-left: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.2712px;
+    line-height: 24px;
+    color: var(--color-primary);
+}
+
+input {
+    margin-top: 30px;
+    width: 342px;
+    height: 49px;
+    padding: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    background: var(--color-gray-4);
+    border: 1.5px solid var(--color-gray-4);
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.adminProfile {
+    background: transparent;
+}
+
+.buttonsSearch {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    width: 800px;
+
+}
+
+.all {
+    width: 88px;
+    height: 48px;
+    position: static;
+    background: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+    box-sizing: border-box;
+    border-radius: 30px;
+    flex: none;
+    margin: 0px 22px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--color-gray-1) ;
+    left: 0px;
+    top: 0px;
+    padding: 15px, 20px, 15px, 20px;
+
+}
+
+.bread {
+    background: rgba(255, 247, 244, 1);
+    border: 1.5px solid rgba(255, 247, 244, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: static;
+    width: 170px;
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 32px;
+    flex: none;
+    flex-grow: 0;
+    margin: 0px 22px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+    left: 110px;
+    top: 0px;
+    padding: 15px, 20px, 15px, 20px;
+}
+
+.fruits {
+    background: rgba(255, 241, 244, 1);
+    border: 1.5px solid rgba(255, 241, 244, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    width: 123px;
+    height: 48px;
+    box-sizing: border-box;
+    border-radius: 32px;
+}
+
+.fruits>span {
+    margin-left: 20px;
+    width: 49px;
+    height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #212529;
+}
+
+.wine {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 20px;
+    /* position: absolute; */
+    width: 136px;
+    height: 48px;
+    left: 582px;
+    top: 122px;
+    background: var(--color-gray-2);
+    border: 1.5px solid ;
+    box-sizing: border-box;
+    border-radius: 32px;
+
+}
+
+.wine>span {
+    height: 19px;
+    width: 62px;
+    left: 54px;
+    top: 14.5px;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: center;
+    flex: none;
+    flex-grow: 0;
+    margin: 0px 15px;
+}
+
+.addProductCard {
+    height: 48px;
+    width: 217px;
+    left: 1268px;
+    top: 116px;
+    padding: 15px, 20px, 15px, 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 217px;
+    height: 48px;
+    left: 1268px;
+    top: 116px;
+    background:var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+    box-sizing: border-box;
+    border-radius: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--color-gray-1);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 15px;
+}
+
+@media (min-width: 768px) {
+    header {
+        height: 72px;
+    }
+
+    .nameHomepage {
+        width: 85vw;
+        justify-content: space-between;
+    }
+
+    input {
+        margin-top: -55px;
+        margin-left: 360px;
+    }
+
+    .buttonsSearch {
+        width: 85vw;
+    }
+
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .template {
+        width: 85vw;
+        margin-top: 90px;
+    }
+
+    ul {
+        font-family: 'Poppins';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: left;
+        color: var(--color-gray-5);
+    }
+
+    li {
+        margin-top: 35px;
+        height: 62px;
+        left: 115px;
+        top: 277px;
+        background: var(--color-white) ;
+        border: 1px solid var(--color-gray-4);
+        box-sizing: border-box;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+
+    }
+
+    .productsAndCategory {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        align-items: center;
+        width: 450px;
+    }
+
+    .descriptionAndAction {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .editProduct {
+        background-color: transparent;
+    }
+
+    .deleteProduct {
+        background-color: transparent;
+    }
+
+    .showModalStatusOk, .showModalStatusError {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 2000;
+        display: none;
+        position: fixed;
+        margin-left: 800px;
+        margin-top: 800px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .aparecer {
+        display: flex;
+
+    }
+
+    .boxModalStatus {
+        background-color: var(--color-white);
+        width: 496px;
+        height: 135px;
+        padding: 20px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: baseline;
+    }
+
+    .status {
+        height: 70px;
+        width: 496px;
+        left: 1090px;
+        top: 698px;
+        padding: 20px, 28px, 20px, 28px;
+        display: flex;
+        justify-content: space-around;
+        background:  rgba(248, 249, 250, 1);
+        border-radius: 8px 8px 0px 0px;
+        align-items: center;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .btnExit {
+        margin-left: 330px;
+        width: 31px;
+        height: 30px;
+        left: 437px;
+        top: 20px;
+        background: var(--color-gray-4);
+        border-radius: 4px;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: var(--color-gray-3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .statusOver {
+        width: 496px;
+        height: 65px;
+        left: 1090px;
+        top: 768px;
+        background: var(--color-white);
+        border-radius: 0px 0px 8px 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        color: #212529;
+    }
+    .messageStatus{
+        padding: 15px;
+    }
+    .listGreen {
+        width: 496px;
+        height: 8px;
+        left: 1090px;
+        top: 825px;
+        background: var(--color-secondary);
+        border-radius: 0px 0px 8px 8px;
+
+    }
+
+    .listRed {
+        width: 496px;
+        height: 8px;
+        left: 1090px;
+        top: 825px;
+        background: var(--color-primary);
+        border-radius: 0px 0px 8px 8px;
+
+    }
+}
