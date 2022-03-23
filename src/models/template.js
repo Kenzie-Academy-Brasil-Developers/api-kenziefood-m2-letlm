@@ -2,10 +2,9 @@ import { KenzieFood } from "../requests/requests.js";
 
 class Vitrine {
 
-    
     static main = document.getElementById('mainProducts')
     
-    static async listaProdutos(){
+    static async productList(){
 
         this.main.innerText = ""
         const products = await KenzieFood.getPublic()
@@ -27,15 +26,16 @@ class Vitrine {
         const button = document.createElement("button")
         const section = document.createElement("section")
 
+
+        div.id = id;
         img.src = `${imagem}`;
         cat.innerText = `${categoria}`;
         cat.classList.add("categoria");
         cat.setAttribute('id', 'section')
         name.innerText = nome;
         description.innerText = `${descricao}`;
-        price.innerText = `R$ ${preco}`;
         price.classList.add("price");
-        price.innerText = `R$ ${preco}`;
+        price.innerText = `R$ ${preco.toFixed(2)}`;
         button.innerText = "🛒";
         button.id = id;
         button.classList.add("add");
@@ -57,7 +57,7 @@ class Vitrine {
 
 
 
-Vitrine.listaProdutos()
+Vitrine.productList()
 
 export {Vitrine}
 
