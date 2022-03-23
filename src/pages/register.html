@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/reset.css">
     <link rel="stylesheet" href="../../public/register.css">
-    <title>Document</title>
+    <title>Cadastrar</title>
 </head>
 
 <body>
@@ -15,21 +15,21 @@
     <header>
         <nav>
             <img src="../../public/images/kenziefoodlogo.png" alt="logo kenzie">
-            <div class="details">
-                <span>Ja é cadastrado? <a href="../pages/login.html" target="_blank">Entrar</a></span>
-                <span>Voltar para tela <a href="/index.html" target="_blank">Inicial</a></span>
-            </div>
         </nav>
     </header>
 
     <main>
         <section>
-            <h2>Criar seu cadastro</h2>
+            <a class="closed" href="/index.html">X</a>
             <form action="#" class="formRegister">
-                <input type="text" name="name" placeholder="username">
-                <input type="email" name="email" placeholder="email">
-                <input type="password" name="password" placeholder="password">
-                <button>Cadastro teste</button>
+                <h2>Criar seu cadastro</h2>
+                <input type="text" name="name" placeholder="Digite seu nome">
+                <input type="email" name="email" placeholder="Digite seu email">
+                <input type="password" name="password" placeholder="Digite sua senha">
+                <button>Cadastrar</button>
+                <div class="details">
+                    <span>Ja é cadastrado? <a href="../pages/login.html" target="_blank">Entrar</a></span>
+                </div>
             </form>
         </section>
     </main>
