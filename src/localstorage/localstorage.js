@@ -3,9 +3,7 @@ class Local{
         "token": {}
     }
 
-    static cart = [
-        
-    ]
+    static cart = JSON.parse(localStorage.getItem('products')) || []
 }
 
 export {Local}
