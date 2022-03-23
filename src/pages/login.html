@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/reset.css">
+    <link rel="stylesheet" href="/public/login.css">
     <title>Login</title>
 </head>
 <body>
@@ -11,17 +13,15 @@
     <header>
         <nav>
             <img src="../../public/images/kenziefoodlogo.png" alt="logo kenzie">
-            <div class="details">
-                <span>Voltar para tela <a href="/index.html" target="_blank">Inicial</a></span>
-            </div>
         </nav>
     </header>
     <main>
         <section>
-            <h2>Faça o seu login</h2>
+            <a class="closed" href="/index.html">X</a>
             <form action="#" class="formLogin">
-                <input type="email" name="email" placeholder="email">
-                <input type="password" name="password" placeholder="password">
+                <h2>Faça o seu login</h2>
+                <input type="email" name="email" placeholder="Digite seu email">
+                <input type="password" name="password" placeholder="Digite sua senha">
                 <button>Login</button>
             </form>
         </section>
@@ -30,7 +30,7 @@
     <div id="modalError" class="showModalError">
         <div class="boxModalError">
             <span id="errorFix"> Usuário ou senha incorretos!</span>
-            <button id="btnExit" type="button">X</button>
+            <button id="btnExit" type="button">Fechar</button>
         </div>
     </div>
     <script type="module" src="/src/controllers/login.js"></script>
