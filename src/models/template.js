@@ -17,8 +17,9 @@ class Vitrine {
 
     static createVitrine({ categoria, descricao, imagem, nome, preco, id }){
         
-        const div = document.createElement("div")
-        const img = document.createElement("img");
+        const div = document.createElement("div");
+        const img = document.createElement("img"); 
+        const divCart = document.createElement("div"); 
         const cat = document.createElement("button");
         const name = document.createElement("h2");
         const description = document.createElement("p");
@@ -45,17 +46,15 @@ class Vitrine {
         buttonRemove.innerText = "🗑️";
         buttonRemove.id = id;
         buttonRemove.classList.add("remove");
-        imgButton.src = ".././public/images/ButtonCart.png";
         button.classList.add("add");
         imgButton.classList.add("add");
         imgButton.id = id;
 
         div.appendChild(img);
-        div.appendChild(cat);
+        div.appendChild(cat)
         div.appendChild(name);
         div.appendChild(description);
         section.appendChild(price);
-        button.appendChild(imgButton)
         section.appendChild(button)
         div.appendChild(section)
         section.appendChild(buttonRemove)
