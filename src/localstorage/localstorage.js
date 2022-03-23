@@ -3,9 +3,9 @@ class Local{
         "token": {}
     }
 
-    static cartProducts = {
-        "products": {}
-    }
+    static cart = [
+        
+    ]
 }
 
 export {Local}
