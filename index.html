@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins&family=Spectral&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins&family=Spectral&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="public/reset.css">
     <link rel="stylesheet" href="public/style.css">
     <title>Kenzie Food</title>
@@ -15,12 +16,17 @@
 
 <body>
     <header>
-        <img src="public/images/kenziefoodlogo.png" alt="logo kenzie">
-        <div class="inputButton">
-            <input type="text" placeholder="Pesquisa por produto" class="input">
-            <button><img src="public/images/search.jpg" alt="search"></button>
+        <div class="detailsLogoRegister">
+            <img src="public/images/kenziefoodlogo.png" alt="logo kenzie">
+            <a href="./src/pages/register.html">Criar Conta</a>
         </div>
+       
+            <div class="inputButton">
+                <input type="text" placeholder="Pesquisa por produto" class="input">
+                <button><img src="/public/images/search.png" alt="search"></button>
+            </div>
     </header>
+
     <div class="button">
         <!--filtros-->
         <button class="all">Todos</button>
@@ -28,6 +34,7 @@
         <button class="fruits"><img src="public/images/IconFruits.png">Frutas</button>
         <button class="drinks"><img src="public/images/iconGlassWine.png">Bebidas</button>
     </div>
+
     <div class="vitrine">
         <main id="mainProducts">
 
@@ -48,7 +55,7 @@
                 <!-- carrinho vazio -->
 
                 <img src="public/images/cart.png" alt="carrinho">
-                
+
                 <p>Por enquanto não temos produto no carrinho</p>
             </div>
 
