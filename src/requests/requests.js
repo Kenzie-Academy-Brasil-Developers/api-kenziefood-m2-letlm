@@ -60,5 +60,8 @@
 }
   
 
+let objproducts = await KenzieFood.getPublic()
+  
 
-export{KenzieFood};
+
+export{objproducts,KenzieFood};
