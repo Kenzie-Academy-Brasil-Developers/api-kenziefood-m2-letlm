@@ -7,7 +7,7 @@ class CartProducts{
     static async addProducts(event){
         const btnCart = event.target;
         const products = await KenzieFood.getPublic();
-
+ 
         if(btnCart.tagName === "IMG"){
             const filterProducts = products.filter((product) => {
                 return btnCart.id == product.id;
@@ -25,6 +25,7 @@ class CartProducts{
     static async listProductsInCart(){
         this.cart.innerHTML = ""
         
+
         const productsLocal = JSON.parse(localStorage.getItem('products')) || Local.cart;
 
         productsLocal.forEach((products) => {

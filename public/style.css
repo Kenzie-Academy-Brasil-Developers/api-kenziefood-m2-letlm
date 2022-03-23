@@ -183,62 +183,89 @@ main section {
 }
 
 #emptyCar img {
-    width: 50px;
-    height: 50px;
-    margin-left: 42%;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    
 }
 
 #emptyCar {
     width: 319px;
-    height: 296px;
-    display: none;
+    height: 380px;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
     background: var(--color-gray-1);
     font-size: 14px;
     color: var(--color-gray-3);
+    overflow-y: auto;
+    
+}
+
+#emptyCar h2{
+    font-weight: bolder;
+    color: #000000;
+    margin-top: 20px;
 }
 
 #itemsToBuy {
-    
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    width: 320px;
+    background: var(--color-gray-1);
+    flex-direction: column;
 }
 
 .scroll{
-    
+    max-height: 100px;
+    overflow: hidden;
 }
 
 #itemsToBuy div {
-    
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 #itemsToBuy section {
-    
+    display: flex;
+    justify-content: space-between;
 }
 
 #itemsToBuy img {
-    
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
 }
 
 #itemsToBuy p, #itemsToBuy span {
-    
+    margin-bottom: 10px;
 }
 
 #itemsToBuy p {
-    
+    font-weight: 700;
+    line-height: 20px;
 }
 
 .typeBasket {
-    
+    color: var(--color-gray-36);
+    font-size: 14px;
 }
 
 .priceBasket {
-    
+    color: var(--color-gray-4);
 }
 
 #itemsToBuy button {
-    
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: var(--color-white);
+}
+
+#emptyCar .disk {
+    display: none;
 }
 
 main img {
@@ -260,6 +287,16 @@ main p {
 }
 
 .add {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-secondary-50);
+}
+
+.add:hover{
+    transition: 0.4s;
+    background-color: var(--color-secondary);
     border: none;
     background-color: transparent;
 }
@@ -328,8 +365,48 @@ button:hover {
     transition: 0.4s;
 }
 
-.categoria{
+#mainProducts .categoria{
+    border-radius: 32px;
+    border: none;
+    width: 109px;
+    height: 19px;
+    color: var(--color-gray-3);
+    margin-top: 10px;
+
+}
+
+#mainProducts .remove{
     display: none;
+}
+
+#emptyCar .categoria {
+    border-radius: 32px;
+    border: none;
+    width: 109px;
+    height: 19px;
+    color: var(--color-gray-3);
+    margin-top: 10px;
+}
+
+#emptyCar .remove{
+    border: none;
+    background-color: var(--color-gray-1);
+
+}
+
+
+#emptyCar .add{
+    display: none;
+}
+
+#emptyCar .teste{
+    display: grid;
+    margin-top: 26px;
+    
+}
+
+#emptyCar .price {
+    margin-top:20px
 }
 
 .button button:hover {

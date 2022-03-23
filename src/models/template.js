@@ -26,9 +26,12 @@ class Vitrine {
         const button = document.createElement("button");
         const imgButton = document.createElement("img");
         const section = document.createElement("section")
+        const buttonRemove = document.createElement("button")
 
 
         div.id = id;
+        div.classList.add("teste")
+        description.classList.add('disk')
         img.src = `${imagem}`;
         cat.innerText = `${categoria}`;
         cat.classList.add("categoria");
@@ -36,7 +39,12 @@ class Vitrine {
         name.innerText = nome;
         description.innerText = `${descricao}`;
         price.classList.add("price");
-        price.innerText = `R$ ${preco}`;
+        price.innerText = `R$ ${preco.toFixed(2)}`;
+        button.id = id;
+        button.classList.add("add");
+        buttonRemove.innerText = "🗑️";
+        buttonRemove.id = id;
+        buttonRemove.classList.add("remove");
         imgButton.src = ".././public/images/ButtonCart.png";
         button.classList.add("add");
         imgButton.classList.add("add");
@@ -50,12 +58,12 @@ class Vitrine {
         button.appendChild(imgButton)
         section.appendChild(button)
         div.appendChild(section)
+        section.appendChild(buttonRemove)
         
         return div
         };
 
         
-
     }
 
 
