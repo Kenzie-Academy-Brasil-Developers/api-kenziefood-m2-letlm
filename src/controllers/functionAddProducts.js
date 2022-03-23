@@ -1,5 +1,6 @@
-import { KenzieFood } from "../requests/requests.js"
-import { Local } from "../localstorage/localstorage.js"
+import { KenzieFood } from "../requests/requests.js";
+import { Local } from "../localstorage/localstorage.js";
+import { Vitrine } from "../models/template.js";
 
 class CartProducts{
 
@@ -9,12 +10,34 @@ class CartProducts{
 
         if(btnCart.tagName === "BUTTON"){
             const filterProducts = products.filter((product) => {
-                return btnCart.id == product.id
+                return btnCart.id == product.id;
             })
 
-            Local.cart.push(filterProducts) 
-            localStorage.setItem('products', JSON.stringify(Local.cart))
+            Local.cart.push(filterProducts[0]);
+            localStorage.setItem('products', JSON.stringify(Local.cart));
+          
+            this.listProductsInCart();
         }
+
+    }
+
+    static cart = document.getElementById("emptyCar");
+    static teste = []
+    
+    static async listProductsInCart(){
+        this.cart.innerHTML = ""
+        
+        const productsLocal = JSON.parse(localStorage.getItem('products'));
+
+        CartProducts.teste = [...productsLocal]
+        console.log(CartProducts.teste)
+       
+
+        CartProducts.teste.forEach((products) => {
+            const productsCart = Vitrine.createVitrine(products)
+
+            this.cart.appendChild(productsCart)
+        })
     }
 
 }

@@ -16,7 +16,7 @@ class Vitrine {
     }
 
     static createVitrine({ categoria, descricao, imagem, nome, preco, id }){
-
+        
         const div = document.createElement("div")
         const img = document.createElement("img");
         const cat = document.createElement("button");
