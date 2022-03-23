@@ -38,9 +38,13 @@
 
 
     static async getPublic() {
-        const response = await fetch(`${this.urlApi}product`)
+        const response = await fetch(`${this.urlApi}products`,{
+            "method": "GET"
+        })
         const data = await response.json()
+       // console.log(data)
         return data
+        
     }
 
 
@@ -48,12 +52,13 @@
         const localStorage = JSON.parse(localStorage.getItem('token'))
         const token = localStorage.tokenUser.token
 
-        const response = await fetch(`${this.urlApi}my/product`, { headers :{Authorization: `${token}`}} )
+        const response = await fetch(`${this.urlApi}my/products`, { headers :{Authorization: `${token}`}} )
         const data = await response.json()
         return data
     }
-
+    
 }
+  
 
 
 export{KenzieFood};
