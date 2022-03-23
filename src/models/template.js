@@ -23,7 +23,8 @@ class Vitrine {
         const name = document.createElement("h2");
         const description = document.createElement("p");
         const price = document.createElement("p");
-        const button = document.createElement("button")
+        const button = document.createElement("button");
+        const imgButton = document.createElement("img");
         const section = document.createElement("section")
         const buttonRemove = document.createElement("button")
 
@@ -39,18 +40,22 @@ class Vitrine {
         description.innerText = `${descricao}`;
         price.classList.add("price");
         price.innerText = `R$ ${preco.toFixed(2)}`;
-        button.innerText = "🛒";
         button.id = id;
         button.classList.add("add");
         buttonRemove.innerText = "🗑️";
         buttonRemove.id = id;
         buttonRemove.classList.add("remove");
+        imgButton.src = ".././public/images/ButtonCart.png";
+        button.classList.add("add");
+        imgButton.classList.add("add");
+        imgButton.id = id;
 
         div.appendChild(img);
         div.appendChild(cat);
         div.appendChild(name);
         div.appendChild(description);
         section.appendChild(price);
+        button.appendChild(imgButton)
         section.appendChild(button)
         div.appendChild(section)
         section.appendChild(buttonRemove)
@@ -59,7 +64,6 @@ class Vitrine {
         };
 
         
-
     }
 
 

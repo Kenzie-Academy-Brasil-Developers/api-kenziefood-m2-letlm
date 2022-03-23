@@ -30,17 +30,46 @@ header {
     margin-left: 27px;
 }
 
+
+
+.detailsLogoRegister{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.detailsLogoRegister img{
+    margin-right: 70px;
+}
+
+.detailsLogoRegister a{
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-background-1);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.detailsLogoRegister a:hover{
+    cursor: pointer;
+    background-color: var(--color-gray-4);
+    color: var(--color-gray-1);
+}
+
 input:focus{
     outline: none;
+    
 }
 
 .inputButton {
     display: flex;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: center;
     background-color: var(--color-gray-1);
     border-radius: 12px;
-    width: 300px;
+    width:  312px;;
     height: 20px;
     padding: 10px 3px 13px 7px;
 }
@@ -61,8 +90,9 @@ input:focus{
 }
 
 div button img {
-    width: 15px;
-    height: 15px;
+    width: 19px;
+    height: 20px;
+    margin-top: 5px;
 }
 
 header button {
@@ -76,7 +106,7 @@ header button {
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
-    
+    margin-top: 10px;
 }
 
 h1 {
@@ -93,7 +123,6 @@ header input {
     width: 200px;
     height: 33px;
     border-radius: 30px;
-    text-align: center;
     margin: 10px 0;
     border: none;
     background-color: var(--color-gray-1);
@@ -107,8 +136,8 @@ main {
 }
 
 main div {
-    width: 300px;
-    height: 400px;
+    width: 303px;
+    height: 397px;
     padding: 0px 10px;
     display: flex;
     flex-direction: column;
@@ -135,6 +164,7 @@ main section {
     display: flex;
     justify-content: space-between;
     align-content: center;
+    align-items: flex-end;
 }
 
 .price {
@@ -267,6 +297,20 @@ main p {
 .add:hover{
     transition: 0.4s;
     background-color: var(--color-secondary);
+    border: none;
+    background-color: transparent;
+}
+
+.add img {
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+
+
+.add img:hover{
+   border: none;
+   background-image: url();
 }
 
 .button {
@@ -282,7 +326,7 @@ button:hover {
 
 .all, .bakery, .fruits, .drinks {
     width: 109px;
-    height: 25px;
+    height: 48px;
     border-radius: 32px;
     display: flex;
     justify-content: center;
@@ -292,6 +336,28 @@ button:hover {
     margin-top: -15px;
     margin-left: 10px;
     border: none;
+}
+
+.all {
+    width: 88px;
+    color: #000000;
+}
+
+.bakery {
+    width: 170px;
+    background-color: rgba(255, 247, 244, 1);
+    color: #000000;
+}
+
+.fruits {
+    width: 123px;;
+}
+
+.drinks {
+    width: 136px;
+    background: rgba(243, 238, 245, 1);
+    color: #000000;
+
 }
 
 .button button {
@@ -425,6 +491,7 @@ button:hover {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-top: -70px;
         
     }
     #emptyCar {
