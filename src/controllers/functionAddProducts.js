@@ -15,25 +15,18 @@ class CartProducts{
 
             Local.cart.push(filterProducts[0]);
             localStorage.setItem('products', JSON.stringify(Local.cart));
-          
-            this.listProductsInCart();
         }
 
+        this.listProductsInCart();
     }
-
+    
     static cart = document.getElementById("emptyCar");
-    static teste = []
     
     static async listProductsInCart(){
         this.cart.innerHTML = ""
         
         const productsLocal = JSON.parse(localStorage.getItem('products'));
-
-        CartProducts.teste = [...productsLocal]
-        console.log(CartProducts.teste)
-       
-
-        CartProducts.teste.forEach((products) => {
+        productsLocal.forEach((products) => {
             const productsCart = Vitrine.createVitrine(products)
 
             this.cart.appendChild(productsCart)
@@ -41,7 +34,6 @@ class CartProducts{
     }
 
 }
-
 
 
 export {CartProducts}
