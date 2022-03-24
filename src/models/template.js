@@ -7,7 +7,6 @@ class Vitrine {
     
     static async productList(){
         const products = await KenzieFood.getPublic()
-
         this.main.innerText = ""
         
         products.forEach((product) => {
