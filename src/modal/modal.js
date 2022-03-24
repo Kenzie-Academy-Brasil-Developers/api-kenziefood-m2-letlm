@@ -1,17 +1,16 @@
+import {RequestAdmin} from "../requests/requestsAdmin.js"
+
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd")
 
 
     static newProduct() {
         const getButton = document.querySelector(".addProductCard")
-        console.log(getButton)
         getButton.addEventListener("click", this.openModal.bind(this))
     }
 
     static editProduct() {
         const getButtonEdited = document.querySelector(".editProduct")
-        console.log(ModalProduct.divAddModal)
-        console.log(getButtonEdited)
         getButtonEdited.addEventListener("click", this.openModalEdit.bind(this))
     }
 
@@ -19,6 +18,7 @@ class ModalProduct {
         const getButtonDelete = document.querySelector(".deleteProduct")
         getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
     }
+    
     static divAddModal = document.querySelector(".modalAdd") 
 
 
@@ -43,7 +43,9 @@ class ModalProduct {
         const radioBread = document.createElement("input")
         radioBread.type = "radio"
         radioBread.name = "categoria"
+        radioBread.value = "Panificadora"
         radioBread.id = "bread"
+        radioBread.setAttribute("value", "Panificadora")
         const labelBread = document.createElement("label")
         labelBread.classList.add("legend")
         labelBread.innerText = "Panificadora"
@@ -51,6 +53,7 @@ class ModalProduct {
         const radioFruits = document.createElement("input")
         radioFruits.type = "radio"
         radioFruits.name = "categoria"
+        radioFruits.setAttribute("value", "Frutas")
         radioFruits.id = "fruits"
         const labelFruits = document.createElement("label")
         labelFruits.classList.add("legend")
@@ -59,6 +62,7 @@ class ModalProduct {
         const radioDrinks = document.createElement("input")
         radioDrinks.type = "radio"
         radioDrinks.name = "categoria"
+        radioDrinks.setAttribute("value", "Bebidas")
         radioDrinks.id = "drinks"
         const labelDrinks = document.createElement("label")
         labelDrinks.classList.add("legend")
@@ -69,6 +73,7 @@ class ModalProduct {
         const labelFive = document.createElement("label")
         const inputImage = document.createElement("input")
         const btnRegister = document.createElement("button")
+
         div.id = "modalEdit"
         div.classList.add("showModalEdit")
         divBox.classList.add("boxModalEdit")
@@ -131,6 +136,47 @@ class ModalProduct {
 
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer")
+        })
+
+        btnRegister.addEventListener("click", (event) => {
+            event.preventDefault()
+            
+            const data = {}
+
+            // const input = document.getElementsByTagName("input")
+            // for(let i = 0; i < input.length; i++){
+            //     if(input[i].type === "radio"){
+            //         if(input[i].checked){
+            //              console.log(input[i].value)
+            //         }
+            //     }
+            // }
+
+
+            for(let i = 0; i < form.length; i++){
+                
+                const {name, value, type, checked} = form[i]
+                
+                if(name && type !== "radio"){
+                    data[name] = value
+                } else if(checked) {
+                    data["categoria"] = value
+                }
+                
+                form[i].value = ""
+            }
+
+            RequestAdmin.createdProduct(data)
+
+            .then(data => {
+            
+                if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
+                    alert("Erro ao cadastrar o produto, tente novamente!")
+                    div.classList.add("desaparecer")
+                } else {
+                    div.classList.add("desaparecer")
+                }
+            })
         })
     }
 

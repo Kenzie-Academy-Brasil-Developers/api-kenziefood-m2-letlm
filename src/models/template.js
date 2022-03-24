@@ -15,7 +15,7 @@ class Vitrine {
         })
     }
 
-    static createVitrine({ categoria, descricao, imagem, nome, preco, id }){
+    static createVitrine({categoria, descricao, imagem, nome, preco, id}){
         
         const div = document.createElement("div");
         const img = document.createElement("img"); 
@@ -27,16 +27,14 @@ class Vitrine {
         const section = document.createElement("section")
         const buttonRemove = document.createElement("button")
         
-        buttonRemove.addEventListener('click', () => {
-            
-            const productsLocal = JSON.parse(localStorage.getItem('products'))   
+        buttonRemove.addEventListener('click', () => {  
 
             Local.cart.splice(
             Local.cart.findIndex((p) => p.id === id),
                 1
             );
             
-            // REMOVER PRODUTOS DO LOCAL STORAGE.
+            localStorage.setItem('products', JSON.stringify(Local.cart));
 
             const ulCart = document.getElementById('emptyCar');
             ulCart.removeChild(div);
@@ -53,7 +51,7 @@ class Vitrine {
         cat.innerText = `${categoria}`;
         cat.classList.add("categoria");
         price.classList.add("price");
-        price.innerText = `R$ ${preco.toFixed(2)}`;
+        price.innerText = `R$ ${preco}`;
         button.id = id;
         button.classList.add("add");
         buttonRemove.innerText = "🗑️";
@@ -75,7 +73,6 @@ class Vitrine {
 
         
     }
-
 
 
 Vitrine.productList()
