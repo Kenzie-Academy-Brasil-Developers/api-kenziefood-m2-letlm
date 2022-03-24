@@ -4,6 +4,7 @@ class Local{
     }
 
     static cart = JSON.parse(localStorage.getItem('products')) || []
+
 }
 
 export {Local}

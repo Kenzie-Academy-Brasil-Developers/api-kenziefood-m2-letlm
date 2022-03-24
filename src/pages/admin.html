@@ -52,18 +52,18 @@
                 <!-- APENAS MODELO PARA VERIFICAR O CSS  -->
 
                 <li>
-                    <div class="productsAndCategory">
+                    <div class="products">
                         <img class="imgProduct" src="/public/images/imgTeste.png" alt="">
                         <span class="nameProduct">Panqueca de banana com aveia</span>
-                        <span class="category">Bebidas</span>
-                        <span class="category">Frutas</span>
-                    </div>
-
-                    <div class="descriptionAndAction">
-                        <span class="descriptionProduct">Esta receita serve muito bem 2 pessoas...</span>
-                        <button class="editProduct"> <img src="/public/images/iconEdit.png" alt=""></button>
-                        <button class="deleteProduct"> <img src="/public/images/iconDelete.png" alt=""></button>
-                    </div>
+                        <div class="category">
+                            <span class="category">Bebidas</span>
+                            <span class="category">Frutas</span>
+                        </div>
+                        <div class="descriptionAndAction">
+                            <span class="descriptionProduct">Esta receita serve muito bem 2 pessoas...</span>
+                            <button class="editProduct"> <img src="/public/images/iconEdit.png" alt=""></button>
+                            <button class="deleteProduct"> <img src="/public/images/iconDelete.png" alt=""></button>
+                        </div>
                 </li>
             </ul>
 
@@ -71,16 +71,16 @@
     </main>
 
     <!-- modal CADASTRO de produto POR ENQUANTO DEIXAR COMENTADO-->
-    <!-- <div id="modalEdit" class="showModalEdit">
+     <div id="modalEdit" class="showModalEdit">
         <div class="boxModalEdit">
             <div class="edit">
                 <span class="statusSpan">Cadastro de produto</span>
                 <button class="btnExit">X</button>
             </div>
             <div class="modalForm">
-                <form action="#">
+                <form class="newProduct" action="#">
                     <label for="">Nome do Produto</label>
-                    <input type="text" placeholder="Digitar o nome"required>
+                    <input type="text" placeholder="Digitar o nome" required>
                     <label for="">Descrição</label>
                     <input type="text" placeholder="Digitar a descrição" required>
                     <label for="">Categorias</label>
@@ -94,10 +94,11 @@
                     <label for="">Link da imagem</label>
                     <input type="text" placeholder="Inserir link" required>
                     <button class="btnRegister">Cadastrar produto</button>
+                    
                 </form>
             </div>
         </div>
-    </div> -->
+    </div> 
 
     <!-- modal edição de produto POR ENQUANTO DEIXAR COMENTADO-->
     <!-- <div id="modalEdit" class="showModalEdit">
@@ -106,12 +107,12 @@
                 <span class="statusSpan">Edição de produto</span>
                 <button class="btnExit">X</button>
             </div>
-            <div class="modalForm">
-                <form action="#">
+            <div class="modalFormEditar">
+                <form class="editProduct" action="#">
                     <label for="">Nome do Produto</label>
-                    <input type="text" required>
+                    <input type="text" id="editName">
                     <label for="">Descrição</label>
-                    <input type="text" required>
+                    <input type="text" id="editDescription">
                     <label for="">Categorias</label>
                     <div class="btnsCategory">
                         <button class="btnBread">Panificadora</button>
@@ -119,20 +120,21 @@
                         <button class="btnDrinks">Bebidas</button>
                     </div>
                     <label for="">Valor do Produto</label>
-                    <input type="text" required>
+                    <input type="text" id="editPrice">
                     <label for="">Link da imagem</label>
-                    <input type="text" required>
-                    <button class="btnExc" >Excluir</button>
+                    <input type="text" id="editImg">
+                    <button class="btnExc">Excluir</button>
                     <button class="btnSave">Salvar alterações</button>
+                    <input type="hidden" name="id" id="postId">
                 </form>
             </div>
         </div>
     </div> -->
 
 
-
+<!-- 
     <!-- modal exclusão de produto -->
-    <div id="modalDelete" class="showModalDelete">
+    <!-- <div id="modalDelete" class="showModalDelete">
         <div class="boxModalDelete">
             <div class="delete">
                 <span class="statusSpan">Exclusão de produto</span>
@@ -146,7 +148,7 @@
         </div>
     </div>
     <!-- modal status ok -->
-    <div id="modalStatusOk" class="showModalStatusOk">
+    <!-- <div id="modalStatusOk" class="showModalStatusOk">
         <div class="boxModalStatus">
             <div class="status">
                 <span class="statusSpan">Status</span>
@@ -158,9 +160,9 @@
             </div>
 
         </div>
-    </div>
+    </div> --> -->
     <!-- modal status error -->
-    <div id="modalStatusError" class="showModalStatusError">
+    <!-- <div id="modalStatusError" class="showModalStatusError">
         <div class="boxModalStatus">
             <div class="status">
                 <span class="statusSpan">Status</span>
@@ -172,7 +174,7 @@
             </div>
 
         </div>
-    </div>
+    </div> --> -->
 
 
 

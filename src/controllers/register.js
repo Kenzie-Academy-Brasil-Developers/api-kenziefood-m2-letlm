@@ -11,28 +11,48 @@ class Register {
         event.preventDefault()
         const forms = document.querySelector("form")
         const newAcess = {}
-
+        
         for (let i = 0; i < forms.length; i++) {
             const { name, value } = forms[i]
             if (name) {
-                if (value === "") {
-                    return alert("Preencha os dados corretamente.")
-                }
-                newAcess[name] = value
+                // if (value === "") {
+                //     this.modalErrorNull()
+                    newAcess[name] = value
             }
             forms[i].value = ""
         }
         KenzieFood.register(newAcess)
-            .then(data => {
-                if (data.status === "Error") {
-                    alert("erro") // trocar por modal
-                } else {
-                    alert("tudo ok") // trocar por modal
-                }
-            })
+        .then(data => {
+            if (data.status === "Error") {
+                this.modalError()
+            } else {
+                // window.location.href = "/src/pages/login.html"
+            }
+        })
     }
 
-}
+    static modalError(){
+        const modal = document.querySelector("showModalErrorNull")
+        modal.classList.add("aparecer")
+        modal.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modal.classList.remove("aparecer")
+            }
+        })
+    }
 
+    // static modalErrorNull(){
+    //     const modalNull = document.querySelector("#modalError")
+    //     modalNull.classList.add("aparecer")
+    //     modalNull.addEventListener("click", (event) => {
+    //         if(event.target.tagName === "BUTTON"){
+    //             modalNull.classList.remove("aparecer")
+    //         }
+    //     })
+    // }
+    
+
+}
 Register.start()
+
 export { Register }
