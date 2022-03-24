@@ -189,6 +189,7 @@ class ModalProduct {
         spanStatus.classList.add("statusSpan")
         buttonExit.classList.add("btnExit")
         divModal.classList.add("modalForm")
+        divBtns.classList.add("divFinally")
         form.classList.add("newProduct")
         form.action = "#"
         spanStatus.innerText = "Edição de produto"
@@ -217,7 +218,7 @@ class ModalProduct {
         inputImage.name = "imagem"
         btnLeave.classList.add("btnLeave")
         btnLeave.innerText = "Excluir"
-        btnRegister.classList.add("btnRegister")
+        btnRegister.classList.add("btnSave")
         btnRegister.innerText = "Salvar alterações"
         divCategory.appendChild(radioBread)
         divCategory.appendChild(labelBread)
@@ -298,11 +299,12 @@ class ModalProduct {
         divDelete.appendChild(buttonExit)
 
         divStatus.appendChild(spanMessage)
-        divStatus.appendChild(btnYes)
-        divStatus.appendChild(btnNo)
+        divBtns.appendChild(btnYes)
+        divBtns.appendChild(btnNo)
 
         divBox.appendChild(divDelete)
         divBox.appendChild(divStatus)
+        divBox.appendChild(divBtns)
 
         div.appendChild(divBox)
 
