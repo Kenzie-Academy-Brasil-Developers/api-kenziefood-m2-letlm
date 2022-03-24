@@ -25,6 +25,7 @@ class Vitrine {
             const templateProducts = this.createVitrineAdmin(product)
             this.ulAdminPage.appendChild(templateProducts)
         })
+
     }
 
     static createVitrineAdmin({ categoria, descricao, imagem, nome, id, preco}){

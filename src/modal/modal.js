@@ -1,6 +1,4 @@
-import {
-    RequestAdmin
-} from "../requests/requestsAdmin.js"
+import {RequestAdmin} from "../requests/requestsAdmin.js"
 
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd")
