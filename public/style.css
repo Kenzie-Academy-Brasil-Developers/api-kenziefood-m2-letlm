@@ -2,6 +2,7 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-gray-1: #F8F9FA;
+    --color-gray-2: #E9ECEF;
     --color-gray-3: #868E96;
     --color-gray-4: #212529;
     --color-secondary: #4ACA94;
@@ -67,7 +68,7 @@ input:focus{
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
-    background-color: var(--color-gray-1);
+    background-color: var(--color-gray-2);
     border-radius: 12px;
     width:  312px;;
     height: 20px;
@@ -81,6 +82,7 @@ input:focus{
 .inputButton button{
     width: 30px;
     height: 30px;
+    background-color: var(--color-gray-2);
     
 }
 
@@ -125,7 +127,7 @@ header input {
     border-radius: 30px;
     margin: 10px 0;
     border: none;
-    background-color: var(--color-gray-1);
+    background-color: var(--color-gray-2);
     
 }
 
@@ -369,7 +371,7 @@ button:hover {
 #mainProducts .categoria{
     border-radius: 32px;
     border: none;
-    width: 109px;
+    width: 85px;
     height: 19px;
     color: var(--color-gray-3);
     margin-top: 10px;
