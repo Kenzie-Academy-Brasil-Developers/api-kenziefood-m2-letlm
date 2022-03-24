@@ -265,7 +265,7 @@ button:hover {
     }
 
     input {
-        margin-top: -55px;
+        margin-top: 1px;
         margin-left: 750px;
     }
 
@@ -273,6 +273,13 @@ button:hover {
         width: 85vw;
     }
 
+    .iconAdmin {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 31px;
+        margin-top: 14px;
+    }
 
     main {
         display: flex;

@@ -18,9 +18,9 @@ class Vitrine {
     static ulAdminPage = document.querySelector(".productsAdd")
 
     static async productsInAdminPage(){
-
         const products = await RequestAdmin.getMyProducts()
         
+        this.ulAdminPage.innerHTML = ""
         products.forEach((product) => {
             const templateProducts = this.createVitrineAdmin(product)
             this.ulAdminPage.appendChild(templateProducts)

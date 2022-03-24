@@ -1,3 +1,4 @@
+import { Vitrine } from "../models/templateAdmin.js"
 import {RequestAdmin} from "../requests/requestsAdmin.js"
 
 class ModalProduct {
@@ -158,14 +159,14 @@ class ModalProduct {
             }
 
             RequestAdmin.createdProduct(data)
-
-                .then(data => {
-
-                    if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
-                        alert("Erro ao cadastrar o produto, tente novamente!")
-                        div.classList.add("desaparecer")
-                    } else {
-                        div.classList.add("desaparecer")
+            .then(async data => {
+                
+                if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
+                    alert("Erro ao cadastrar o produto, tente novamente!")
+                    div.classList.add("desaparecer")
+                } else {
+                    div.classList.add("desaparecer")
+                    await Vitrine.productsInAdminPage()
                     }
                 })
         })
@@ -201,6 +202,7 @@ class ModalProduct {
         radioBread.type = "radio"
         radioBread.name = "categoria"
         radioBread.id = "bread"
+        radioBread.value = "Panificadora"
         const labelBread = document.createElement("label")
         labelBread.classList.add("legend")
         labelBread.innerText = "Panificadora"
@@ -209,6 +211,7 @@ class ModalProduct {
         radioFruits.type = "radio"
         radioFruits.name = "categoria"
         radioFruits.id = "fruits"
+        radioFruits.value = "Frutas"
         const labelFruits = document.createElement("label")
         labelFruits.classList.add("legend")
         labelFruits.innerText = "Frutas"
@@ -217,6 +220,7 @@ class ModalProduct {
         radioDrinks.type = "radio"
         radioDrinks.name = "categoria"
         radioDrinks.id = "drinks"
+        radioDrinks.value = "Bebidas"
         const labelDrinks = document.createElement("label")
         labelDrinks.classList.add("legend")
         labelDrinks.innerText = "Bebidas"
@@ -310,7 +314,7 @@ class ModalProduct {
             div.classList.add("desaparecer")
         })
 
-        btnRegister.addEventListener("click", (event) => {
+        btnRegister.addEventListener("click", async (event) => {
             event.preventDefault()
 
             const data = {}
@@ -318,10 +322,12 @@ class ModalProduct {
             for (let i = 0; i < form.length; i++) {
 
                 const {name, value, type, checked} = form[i]
-                console.log(name)
+
                 if (name && type !== "radio") {
                     data[name] = value
                 } else if (checked) {
+                    console.log(form[i])
+                    console.log(value)
                     data["categoria"] = value
                 }
 
@@ -329,7 +335,9 @@ class ModalProduct {
             }
 
             console.log(data)
-            RequestAdmin.editProducts(productId, data)
+            await RequestAdmin.editProducts(productId, data)
+            div.classList.add("desaparecer")
+            await Vitrine.productsInAdminPage()
 
         //    .then(data => {
         //         div.classList.add("desaparecer")
@@ -397,8 +405,10 @@ class ModalProduct {
             div.classList.add("desaparecer")
         })
 
-        btnYes.addEventListener("click", () => {
-            RequestAdmin.deleteProducts(productId)
+        btnYes.addEventListener("click", async () => {
+            await RequestAdmin.deleteProducts(productId)
+            div.classList.add("desaparecer")
+            await Vitrine.productsInAdminPage()
             }
             
         )
