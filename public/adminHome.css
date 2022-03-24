@@ -71,6 +71,7 @@ li {
     background: transparent;
     display: flex;
     justify-content: flex-end;
+    display: none;
 }
 
 .detailsLogoRegister{
