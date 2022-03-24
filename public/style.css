@@ -94,7 +94,7 @@ input:focus{
 div button img {
     width: 19px;
     height: 20px;
-    margin-top: 5px;
+    margin-right: 3px;
 }
 
 header button {
@@ -207,6 +207,7 @@ main section {
     font-weight: bolder;
     color: #000000;
     margin-left: 13px;
+    font-size: 12px;
 }
 
 #itemsToBuy {
@@ -331,7 +332,6 @@ button:hover {
 .all {
     width: 88px;
     color: #000000;
-    background-color: var(--color-primary);
     width: 109px;
     height: 48px;
     border-radius: 32px;
@@ -373,6 +373,7 @@ button:hover {
     width: 85px;
     height: 19px;
     color: var(--color-gray-3);
+    background-color: transparent;
     margin-top: 10px;
     display: flex;
     justify-content: flex-start;
@@ -391,6 +392,8 @@ button:hover {
     width: 109px;
     height: 19px;
     color: var(--color-gray-3);
+    background-color: transparent;
+    text-align: left;
 }
 
 #emptyCar .remove{
@@ -427,9 +430,25 @@ button:hover {
     border: 1px solid #8c8e92;
 }
 
-
-#balance {
+.teste products {
     
+    width: 303px;
+    height: 397px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.quantity {
+    margin-top: 18px;
+    margin-left: 15px;
+}
+
+.qtNumber {
+    margin-right: 10px;
+    margin-top: 18px;
 }
 
 .flex {
@@ -533,6 +552,6 @@ button:hover {
     }
 
     .button {
-        padding: 0px 105px;
+        padding: 0px 129px;
     }
 }
