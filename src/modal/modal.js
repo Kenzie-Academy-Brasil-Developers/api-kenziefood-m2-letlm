@@ -1,3 +1,5 @@
+import {RequestAdmin} from "../requests/requestsAdmin.js"
+
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd")
 
@@ -253,8 +255,9 @@ class ModalProduct {
             div.classList.add("desaparecer")
         })
 
-        // btnLeave.addEventListener("click", () => {
-        //     EXCLUIR O CADASTRO
+        //TESTAR AQUIIII
+        // btnLeave.addEventListener("click", (event) => {
+        //    sair da página apenas
         // })
 
         // btnRegister.addEventListener("click", () => {
@@ -313,9 +316,10 @@ class ModalProduct {
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer")
         })
-
-        // btnYes.addEventListener("click", () => {
-        //     VAI APAGAR O PRODUTO
+        //TESTAR AQUIIII
+        // btnYes.addEventListener("click", (event) => {
+        //     event.preventDefault()
+        //     RequestAdmin.deleteProducts(id)
         // })
 
         btnNo.addEventListener("click", () => {
