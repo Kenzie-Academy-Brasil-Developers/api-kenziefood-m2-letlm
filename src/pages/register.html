@@ -33,13 +33,23 @@
             </form>
         </section>
     </main>
-
-    <div id="modalError" class="showModalError">
+    
+    <div id="modalError" class="showModalErrorNull">
         <div class="boxModalError">
-            <span id="errorFixed"> Usuário ou senha incorretos! </span>
+            <span id="errorFixed"> Preencha os dados corretamente! </span>
             <button id="btnError" type="button">X</button>
         </div>
     </div>
+
+    <div id="error" class="modalErrorRegister">
+        <div class="boxModalErrorRegister">
+            <span id="errorFixed"> Usuário já cadastrado! </span>
+            <button id="btnError" type="button">X</button>
+        </div>
+    </div>
+
+
+
 
     <script type="module" src="/src/controllers/register.js"></script>
 </body>

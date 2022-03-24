@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-:root{
+
+:root {
     --color-white: #FFFFFF;
     --color-gray-1: #F8F9FA;
     --color-gray-3: #868E96;
@@ -9,7 +10,7 @@
     --color-primary: #FF2253;
     --color-primary-50: #FFE9EE;
     --color-primary-10: rgba(248, 249, 250, 1);
-    --color-gray-2:#F3EEF5;
+    --color-gray-2: #F3EEF5;
     --color-gray-4: #E9ECEF;
     --color-gray-5: #868E96;
 }
@@ -102,7 +103,7 @@ input {
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: var(--color-gray-1) ;
+    color: var(--color-gray-1);
     left: 0px;
     top: 0px;
     padding: 15px, 20px, 15px, 20px;
@@ -176,7 +177,7 @@ input {
     left: 582px;
     top: 122px;
     background: var(--color-gray-2);
-    border: 1.5px solid ;
+    border: 1.5px solid;
     box-sizing: border-box;
     border-radius: 32px;
 
@@ -213,7 +214,7 @@ input {
     height: 48px;
     left: 1268px;
     top: 116px;
-    background:var(--color-primary);
+    background: var(--color-primary);
     border: 1.5px solid var(--color-primary);
     box-sizing: border-box;
     border-radius: 32px;
@@ -277,7 +278,7 @@ input {
         height: 62px;
         left: 115px;
         top: 277px;
-        background: var(--color-white) ;
+        background: var(--color-white);
         border: 1px solid var(--color-gray-4);
         box-sizing: border-box;
         border-radius: 12px;
@@ -352,7 +353,7 @@ input {
         padding: 20px, 28px, 20px, 28px;
         display: flex;
         justify-content: space-around;
-        background:  rgba(248, 249, 250, 1);
+        background: rgba(248, 249, 250, 1);
         border-radius: 8px 8px 0px 0px;
         align-items: center;
         font-family: 'Poppins';
@@ -398,9 +399,11 @@ input {
         line-height: 24px;
         color: #212529;
     }
-    .messageStatus{
+
+    .messageStatus {
         padding: 15px;
     }
+
     .listGreen {
         width: 496px;
         height: 8px;
@@ -420,4 +423,62 @@ input {
         border-radius: 0px 0px 8px 8px;
 
     }
+}
+
+.showModalEdit{
+    background-color: red;
+    display: flex;
+    align-items: center;
+} 
+
+.aparecer{
+    display: flex;
+}
+
+.showModalError {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    position: absolute;
+    top: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.aparecer {
+    display: flex;
+}
+
+.boxModalError {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: -100px;
+    width: 200px;
+    height: 90px;
+    border: 2px solid var(--color-gray-1);
+    background-color: var(--color-gray-1);
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#btnExit {
+    background-color: var(--color-primary);
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-top: 20px;
+    width: 100px;
+    height: 45px;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--color-white);
 }
