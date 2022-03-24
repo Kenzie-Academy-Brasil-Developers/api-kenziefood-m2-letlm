@@ -19,10 +19,10 @@ class Vitrine {
         
         const div = document.createElement("div");
         const img = document.createElement("img"); 
-        const cat = document.createElement("button");
         const name = document.createElement("h2");
         const description = document.createElement("p");
         const price = document.createElement("p");
+        const cat = document.createElement("button");
         const button = document.createElement("button");
         const section = document.createElement("section")
         const buttonRemove = document.createElement("button")
@@ -47,11 +47,11 @@ class Vitrine {
         div.classList.add("teste")
         description.classList.add('disk')
         img.src = `${imagem}`;
-        cat.innerText = `${categoria}`;
-        cat.classList.add("categoria");
-        cat.setAttribute('id', 'section')
         name.innerText = nome;
         description.innerText = `${descricao}`;
+        cat.setAttribute('id', 'section')
+        cat.innerText = `${categoria}`;
+        cat.classList.add("categoria");
         price.classList.add("price");
         price.innerText = `R$ ${preco.toFixed(2)}`;
         button.id = id;
@@ -62,9 +62,9 @@ class Vitrine {
         button.classList.add("add");
 
         div.appendChild(img);
-        div.appendChild(cat)
         div.appendChild(name);
         div.appendChild(description);
+        div.appendChild(cat)
         section.appendChild(price);
         section.appendChild(button)
         div.appendChild(section)

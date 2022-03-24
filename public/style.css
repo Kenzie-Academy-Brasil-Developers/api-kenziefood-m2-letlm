@@ -373,6 +373,8 @@ button:hover {
     height: 19px;
     color: var(--color-gray-3);
     margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
 
 }
 
@@ -505,6 +507,7 @@ button:hover {
         align-items: center;
         flex-direction: column;
         margin-top: -70px;
+        height: 521px;
         
     }
     #emptyCar {
