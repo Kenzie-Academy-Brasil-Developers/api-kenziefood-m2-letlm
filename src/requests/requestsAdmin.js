@@ -3,24 +3,30 @@ import { Local } from "../localstorage/localstorage.js"
 class RequestAdmin {
 
     static API_URL = "https://kenzie-food-api.herokuapp.com/"
+    static localStorage = JSON.parse(localStorage.getItem('token'))
 
     static async createdProduct(data) {
-        const {token} = Local.tokenUser
+        const token = this.localStorage.token
+        
         const response = await fetch(`${this.API_URL}my/products`, {
             "method": "POST",
             "headers": {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             },
-            "body": JSON.stringify()
+            "body": JSON.stringify(data)
         })
         const responseData = await response.json(data)
 
         return responseData
     }
 
+    
     static async getMyProducts() {
-        const {token} = Local.tokenUser
+
+       
+        const token = this.localStorage.token
+
         const response = await fetch(`${this.API_URL}my/products`, {
             "method": "GET",
             "headers": {
@@ -32,7 +38,9 @@ class RequestAdmin {
     }
 
     static async editProducts(id, newContent) {
-        const {token} = Local.tokenUser
+
+        const token = this.localStorage.token
+
         const response = await fetch(`${this.API_URL}my/products/:${id}`, {
             "method": "PATH",
             "headers": {
@@ -46,7 +54,9 @@ class RequestAdmin {
     }
 
     static async deleteProducts(id) {
-        const {token} = Local.tokenUser
+
+        const token = this.localStorage.token
+
         await fetch(`${this.API_URL}my/products/:${id}`, {
             "method": "DELETE",
             "headers": {

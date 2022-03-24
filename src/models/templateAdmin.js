@@ -2,16 +2,27 @@ import { RequestAdmin } from "../requests/requestsAdmin.js";
 
 class Vitrine {
 
-    static ul = document.querySelector('productsAdd')
+    static ul = document.getElementById('mainProducts')
     
-    static async productsAdmin(){
+    static async productsAdminHomePage(){
 
-        // this.ul.innerText = ""
         const products = await RequestAdmin.getMyProducts()
         
         products.forEach((product) => {
             const templateProducts = this.createVitrineAdmin(product)
             this.ul.appendChild(templateProducts)
+        })
+    }
+
+    static ulAdminPage = document.querySelector(".productsAdd")
+
+    static async productsInAdminPage(){
+
+        const products = await RequestAdmin.getMyProducts()
+        
+        products.forEach((product) => {
+            const templateProducts = this.createVitrineAdmin(product)
+            this.ulAdminPage.appendChild(templateProducts)
         })
     }
 
