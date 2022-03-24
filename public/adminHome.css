@@ -131,7 +131,11 @@ input:focus{
 }
 
 a {
+    
     text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 30px;
 }
 
 
