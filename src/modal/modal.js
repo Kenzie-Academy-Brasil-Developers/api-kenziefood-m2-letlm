@@ -1,4 +1,6 @@
-import {RequestAdmin} from "../requests/requestsAdmin.js"
+import {
+    RequestAdmin
+} from "../requests/requestsAdmin.js"
 
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd")
@@ -9,17 +11,13 @@ class ModalProduct {
         getButton.addEventListener("click", this.openModal.bind(this))
     }
 
-    static editProduct() {
-        const getButtonEdited = document.querySelector(".editProduct")
-        getButtonEdited.addEventListener("click", this.openModalEdit.bind(this))
-    }
 
-    static deleteProduct() {
-        const getButtonDelete = document.querySelector(".deleteProduct")
-        getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
-    }
-    
-    static divAddModal = document.querySelector(".modalAdd") 
+    // static deleteProduct() {
+    //     const getButtonDelete = document.querySelector(".deleteProduct")
+    //     getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
+    // }
+
+    static divAddModal = document.querySelector(".modalAdd")
 
 
     static openModal() {
@@ -37,7 +35,7 @@ class ModalProduct {
         const labelTwo = document.createElement("label")
         const inputDescription = document.createElement("input")
         const labelThree = document.createElement("label")
-        
+
         const divCategory = document.createElement("div")
         divCategory.classList.add("category")
         const radioBread = document.createElement("input")
@@ -140,49 +138,48 @@ class ModalProduct {
 
         btnRegister.addEventListener("click", (event) => {
             event.preventDefault()
-            
+
             const data = {}
 
-            // const input = document.getElementsByTagName("input")
-            // for(let i = 0; i < input.length; i++){
-            //     if(input[i].type === "radio"){
-            //         if(input[i].checked){
-            //              console.log(input[i].value)
-            //         }
-            //     }
-            // }
+            for (let i = 0; i < form.length; i++) {
 
+                const {
+                    name,
+                    value,
+                    type,
+                    checked
+                } = form[i]
 
-            for(let i = 0; i < form.length; i++){
-                
-                const {name, value, type, checked} = form[i]
-                
-                if(name && type !== "radio"){
+                if (name && type !== "radio") {
                     data[name] = value
-                } else if(checked) {
+                } else if (checked) {
                     data["categoria"] = value
                 }
-                
+
                 form[i].value = ""
             }
 
             RequestAdmin.createdProduct(data)
 
-            .then(data => {
-            
-                if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
-                    alert("Erro ao cadastrar o produto, tente novamente!")
-                    div.classList.add("desaparecer")
-                } else {
-                    div.classList.add("desaparecer")
-                }
-            })
+                .then(data => {
+
+                    if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
+                        alert("Erro ao cadastrar o produto, tente novamente!")
+                        div.classList.add("desaparecer")
+                    } else {
+                        div.classList.add("desaparecer")
+                    }
+                })
         })
     }
 
-    static openModalEdit() {
+    static async openModalEdit() {
 
-        this.divAddModal.innerHTML = ""
+        const products = await RequestAdmin.getMyProducts()
+
+
+        ModalProduct.divAddModal.innerHTML = ""
+
         const div = document.createElement("div")
         const divBox = document.createElement("div")
         const divEdit = document.createElement("div")
@@ -228,44 +225,53 @@ class ModalProduct {
         const divBtns = document.createElement("div")
         const btnRegister = document.createElement("button")
         const btnLeave = document.createElement("button")
-        div.id = "modalEdit"
-        div.classList.add("showModalEdit")
-        divBox.classList.add("boxModalEdit")
-        divEdit.classList.add("edit")
-        spanStatus.classList.add("statusSpan")
-        buttonExit.classList.add("btnExit")
-        divModal.classList.add("modalForm")
-        divBtns.classList.add("divFinally")
-        form.classList.add("newProduct")
-        form.action = "#"
-        spanStatus.innerText = "Edição de produto"
-        buttonExit.innerText = "X"
-        labelOne.innerText = "Nome do Produto"
-        labelOne.classList.add("titleProduct")
-        inputName.placeholder = ""
-        inputName.type = "text"
-        inputName.name = "nome"
-        labelTwo.innerText = "Descrição"
-        labelTwo.classList.add("subtitleProduct")
-        inputDescription.placeholder = ""
-        inputDescription.type = "text"
-        inputDescription.name = "descricao"
-        labelThree.innerText = "Categorias"
-        labelThree.classList.add("categoryLegend")
-        labelFour.innerText = "Valor do Produto"
-        labelFour.classList.add("titlePrice")
-        inputPrice.placeholder = ""
-        inputPrice.type = "text"
-        inputPrice.name = "preco"
-        labelFive.innerText = "Link da imagem"
-        labelFive.classList.add("imageLink")
-        inputImage.placeholder = ""
-        inputImage.type = "url"
-        inputImage.name = "imagem"
-        btnLeave.classList.add("btnLeave")
-        btnLeave.innerText = "Excluir"
-        btnRegister.classList.add("btnSave")
-        btnRegister.innerText = "Salvar alterações"
+
+        for (let i = 0; i < products.length; i++) {
+
+            const {nome, preco, categoria, descricao, id, imagem} = products[i]
+
+            div.id = "modalEdit"
+            div.classList.add("showModalEdit")
+            divBox.classList.add("boxModalEdit")
+            divEdit.classList.add("edit")
+            spanStatus.classList.add("statusSpan")
+            buttonExit.classList.add("btnExit")
+            divModal.classList.add("modalForm")
+            divBtns.classList.add("divFinally")
+            form.classList.add("newProduct")
+            form.action = "#"
+            spanStatus.innerText = "Edição de produto"
+            buttonExit.innerText = "X"
+            labelOne.innerText = "Nome do Produto"
+            labelOne.classList.add("titleProduct")
+            inputName.value = `${nome}`
+            inputName.type = "text"
+            inputName.name = "nome"
+            labelTwo.innerText = "Descrição"
+            labelTwo.classList.add("subtitleProduct")
+            inputDescription.value = `${descricao}`
+            inputDescription.type = "text"
+            inputDescription.name = "descricao"
+            labelThree.innerText = "Categorias"
+            labelThree.classList.add("categoryLegend")
+            labelFour.innerText = "Valor do Produto"
+            labelFour.classList.add("titlePrice")
+            inputPrice.placeholder = ""
+            inputPrice.type = "text"
+            inputPrice.name = "preco"
+            labelFive.innerText = "Link da imagem"
+            labelFive.classList.add("imageLink")
+            inputImage.placeholder = ""
+            inputImage.type = "url"
+            inputImage.name = "imagem"
+            btnLeave.classList.add("btnLeave")
+            btnLeave.innerText = "Excluir"
+            btnRegister.classList.add("btnSave")
+            btnRegister.innerText = "Salvar alterações"
+
+        }
+
+
         divCategory.appendChild(radioBread)
         divCategory.appendChild(labelBread)
         divCategory.appendChild(radioFruits)
@@ -293,11 +299,13 @@ class ModalProduct {
         divBox.appendChild(divEdit)
         divBox.appendChild(divModal)
         div.appendChild(divBox)
-        this.divAddModal.appendChild(div)
-        
+        ModalProduct.divAddModal.appendChild(div)
+
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer")
         })
+
+
 
         // btnLeave.addEventListener("click", () => {
         //     EXCLUIR O CADASTRO
@@ -370,4 +378,6 @@ class ModalProduct {
     }
 }
 
-export { ModalProduct }
+export {
+    ModalProduct
+}

@@ -1,3 +1,4 @@
+import { ModalProduct } from "../modal/modal.js";
 import { RequestAdmin } from "../requests/requestsAdmin.js";
 
 class Vitrine {
@@ -42,7 +43,6 @@ class Vitrine {
         const imgButtonDelete = document.createElement("img");
 
 
-        li.id = id;
         div.classList.add("products");
         img.classList.add("imgProduct");
         img.src = `${imagem}`;
@@ -54,29 +54,17 @@ class Vitrine {
         button.classList.add("editProduct");
         buttonDelete.classList.add("deleteProduct");
         spanCats.innerText = `${categoria}`;
-        span.innerText = nome;
+        span.innerText = `${nome}`;
         spanDesc.innerText = `${descricao}`;
         imgButton.src = "/public/images/iconEdit.png";
         imgButtonDelete.src = "/public/images/iconDelete.png";
 
-        buttonDelete.addEventListener("click", (event) => {
-            event.preventDefault()
-            RequestAdmin.deleteProducts(id).then(async () => {
-                await this.productsAdmin()
-            })
-        })
-        button.addEventListener("click", (event) => {
-            event.preventDefault()
-            document.querySelector('.showModalEdit').classList.add('aparecer');
-            document.querySelector("#postId").value = id;
-            document.querySelector("#editName").value = nome;
-            document.querySelector("#editDescription").value = descricao;
-            document.querySelector("#editPrice").value = preco;
-            document.querySelector("#editImg").value = imagem;
-        });
+        
+        button.addEventListener("click", ModalProduct.openModalEdit)
+        
 
         button.appendChild(imgButton);
-        button.appendChild(imgButtonDelete);
+        buttonDelete.appendChild(imgButtonDelete)
         divTwo.appendChild(spanCats);
         divThree.appendChild(spanDesc);
         divThree.appendChild(button);

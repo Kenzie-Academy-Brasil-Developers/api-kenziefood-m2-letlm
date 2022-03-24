@@ -59,6 +59,7 @@ class Vitrine {
         buttonRemove.classList.add("remove");
         button.classList.add("add");
 
+        div.appendChild(buttonRemove)
         div.appendChild(img);
         div.appendChild(name);
         div.appendChild(description);
@@ -66,7 +67,6 @@ class Vitrine {
         section.appendChild(price);
         section.appendChild(button)
         div.appendChild(section)
-        section.appendChild(buttonRemove)
         
         return div
         };

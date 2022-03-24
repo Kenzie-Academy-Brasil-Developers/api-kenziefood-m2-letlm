@@ -204,8 +204,7 @@ main section {
 #emptyCar h2{
     font-weight: bolder;
     color: #000000;
-    margin-top: -66px;
-    margin-left: 82px;
+    margin-left: 13px;
 }
 
 #itemsToBuy {
@@ -383,8 +382,8 @@ button:hover {
 }
 
 #emptyCar .categoria {
-    margin-left: 7px;
-    margin-top: 38px;
+    margin-left: 80px;
+    margin-top: -46px;
     border-radius: 32px;
     border: none;
     width: 109px;
@@ -395,8 +394,8 @@ button:hover {
 #emptyCar .remove{
     border: none;
     background-color: var(--color-gray-1);
-    margin-bottom: -8px;
-    margin-left: 258px;
+    margin-bottom: -67px;
+    margin-left: 267px;
 }
 
 
@@ -416,7 +415,7 @@ button:hover {
 }
 
 #emptyCar .price {
-  margin-left: 81px;
+    margin: -15px 0px 0px -105px;
 }
 
 .button button:hover {
