@@ -56,7 +56,7 @@ class Vitrine {
         cat.innerText = `${categoria}`;
         cat.classList.add("categoria");
         price.classList.add("price");
-        price.innerText = `R$ ${preco}`;
+        price.innerText = `R$ ${preco.toFixed(2)}`;
         button.id = id;
         button.classList.add("add");
         buttonRemove.innerText = "🗑️";

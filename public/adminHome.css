@@ -2,6 +2,7 @@
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-gray-1: #F8F9FA;
+    --color-gray-2: #E9ECEF;
     --color-gray-3: #868E96;
     --color-gray-4: #212529;
     --color-secondary: #4ACA94;
@@ -32,17 +33,17 @@ header {
 
 
 
-.detailsLogoAdmin{
+.detailsLogoRegister{
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
 
-.detailsLogoAdmin img{
+.detailsLogoRegister img{
     margin-right: 70px;
 }
 
-.detailsLogoAdmin a{
+.detailsLogoRegister a{
     text-decoration: none;
     background-color: var(--color-primary);
     color: var(--color-background-1);
@@ -51,7 +52,7 @@ header {
     border-radius: 8px;
 }
 
-.detailsLogoAdmin a:hover{
+.detailsLogoRegister a:hover{
     cursor: pointer;
     background-color: var(--color-gray-4);
     color: var(--color-gray-1);
@@ -67,7 +68,7 @@ input:focus{
     flex-direction: row-reverse;
     justify-content: flex-end;
     align-items: center;
-    background-color: var(--color-gray-1);
+    background-color: var(--color-gray-2);
     border-radius: 12px;
     width:  312px;;
     height: 20px;
@@ -81,6 +82,7 @@ input:focus{
 .inputButton button{
     width: 30px;
     height: 30px;
+    background-color: var(--color-gray-2);
     
 }
 
@@ -125,7 +127,7 @@ header input {
     border-radius: 30px;
     margin: 10px 0;
     border: none;
-    background-color: var(--color-gray-1);
+    background-color: var(--color-gray-2);
     
 }
 
@@ -204,8 +206,8 @@ main section {
 #emptyCar h2{
     font-weight: bolder;
     color: #000000;
-    margin-top: -66px;
-    margin-left: 82px;
+    margin-left: 13px;
+    font-size: 12px;
 }
 
 #itemsToBuy {
@@ -313,7 +315,7 @@ button:hover {
     cursor: pointer;
 }
 
-.all, .bakery, .fruits, .drinks {
+.bakery, .fruits, .drinks {
     width: 109px;
     height: 48px;
     border-radius: 32px;
@@ -330,6 +332,18 @@ button:hover {
 .all {
     width: 88px;
     color: #000000;
+    background-color: var(--color-primary);
+    width: 109px;
+    height: 48px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: var(--color-gray-4);
+    margin-top: -15px;
+    margin-left: 10px;
+    border: none;
 }
 
 .bakery {
@@ -350,17 +364,19 @@ button:hover {
 }
 
 .button button {
-    background-color: var(--color-background-1);
+    
     transition: 0.4s;
 }
 
 #mainProducts .categoria{
     border-radius: 32px;
     border: none;
-    width: 109px;
+    width: 85px;
     height: 19px;
     color: var(--color-gray-3);
     margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
 
 }
 
@@ -369,8 +385,8 @@ button:hover {
 }
 
 #emptyCar .categoria {
-    margin-left: 7px;
-    margin-top: 38px;
+    margin-left: 80px;
+    margin-top: -46px;
     border-radius: 32px;
     border: none;
     width: 109px;
@@ -381,8 +397,8 @@ button:hover {
 #emptyCar .remove{
     border: none;
     background-color: var(--color-gray-1);
-    margin-bottom: -8px;
-    margin-left: 258px;
+    margin-bottom: -67px;
+    margin-left: 267px;
 }
 
 
@@ -402,7 +418,7 @@ button:hover {
 }
 
 #emptyCar .price {
-  margin-left: 81px;
+    margin: -15px 0px 0px -105px;
 }
 
 .button button:hover {
@@ -414,7 +430,7 @@ button:hover {
 
 
 #balance {
-    display: none;
+    
 }
 
 .flex {
@@ -431,6 +447,10 @@ button:hover {
     display: flex;
     justify-content: space-between;
     padding: 10px 10px 0 0;
+    background-color: var(--color-gray-1);
+    height: 50px;
+    width: 309px;
+    margin-left: -14px;
 }
 
 @media(min-width: 768px) {
@@ -457,6 +477,7 @@ button:hover {
         margin-bottom: 20px;
         flex-direction: row;
         justify-content: space-between;
+        box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.25);
     }
 
     .button {
@@ -488,6 +509,7 @@ button:hover {
         align-items: center;
         flex-direction: column;
         margin-top: -70px;
+        height: 521px;
         
     }
     #emptyCar {

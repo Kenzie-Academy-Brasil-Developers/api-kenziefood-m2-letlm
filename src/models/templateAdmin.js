@@ -44,6 +44,7 @@ class Vitrine {
         const imgButtonDelete = document.createElement("img");
 
         li.id = `${id}`
+        li.classList.add("teste")
         div.classList.add("products");
         img.classList.add("imgProduct");
         img.src = `${imagem}`;
