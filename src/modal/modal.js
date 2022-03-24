@@ -162,12 +162,33 @@ class ModalProduct {
                 .then(data => {
 
                     if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
-                        alert("Erro ao cadastrar o produto, tente novamente!")
+                        this.modalErrorProduct()
                         div.classList.add("desaparecer")
                     } else {
+                        this.modalProductOk()
                         div.classList.add("desaparecer")
                     }
                 })
+        })
+    }
+
+    static modalErrorProduct(){
+        const modalError = document.querySelector(".errorRegister")
+        modalError.classList.add("showProductError")
+        modalError.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalError.classList.remove("showProductError")
+            }
+        })
+    }
+
+    static modalProductOk(){
+        const modalOk = document.querySelector(".okRegister")
+        modalOk.classList.add("showProductOk")
+        modalOk.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalOk.classList.remove("showProductOk")
+            }
         })
     }
 
