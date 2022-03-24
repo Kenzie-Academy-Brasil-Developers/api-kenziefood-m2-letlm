@@ -1,5 +1,8 @@
+import { uptadeTotal } from "../controllers/carrinhoprice.js";
+import { uptadeQuantity } from "../controllers/carrinhototal.js";
 import { Local } from "../localstorage/localstorage.js";
 import { KenzieFood } from "../requests/requests.js";
+
 
 class Vitrine {
 
@@ -36,6 +39,8 @@ class Vitrine {
             
             localStorage.setItem('products', JSON.stringify(Local.cart));
 
+            uptadeTotal();
+            uptadeQuantity();    
             const ulCart = document.getElementById('emptyCar');
             ulCart.removeChild(div);
         })

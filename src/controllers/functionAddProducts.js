@@ -1,7 +1,6 @@
 import { KenzieFood } from "../requests/requests.js";
 import { Local } from "../localstorage/localstorage.js";
 import { Vitrine } from "../models/template.js";
-import {db} from "../controllers/db.js"
 import {uptadeQuantity} from "../controllers/carrinhototal.js"
 import {uptadeTotal} from "../controllers/carrinhoprice.js"
 
@@ -30,20 +29,16 @@ class CartProducts{
     
     static async listProductsInCart(){
         this.cart.innerHTML = ""
-        const productsLocal = JSON.parse(localStorage.getItem('products')) || Local.cart;
-
-
         
-
-        productsLocal.forEach((products) => {
+        Local.cart.forEach((products) => {
             const productsCart = Vitrine.createVitrine(products)
             
-            db.push(products)
+           
             uptadeTotal()
             uptadeQuantity()
-            console.log(db)
             this.cart.appendChild(productsCart)
         })
+        
     }
 
 
