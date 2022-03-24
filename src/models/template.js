@@ -1,3 +1,4 @@
+import { Local } from "../localstorage/localstorage.js";
 import { KenzieFood } from "../requests/requests.js";
 
 class Vitrine {
@@ -5,9 +6,8 @@ class Vitrine {
     static main = document.getElementById('mainProducts')
     
     static async productList(){
-
-        this.main.innerText = ""
         const products = await KenzieFood.getPublic()
+        this.main.innerText = ""
         
         products.forEach((product) => {
             const templateProducts = this.createVitrine(product)
@@ -17,16 +17,30 @@ class Vitrine {
 
     static createVitrine({ categoria, descricao, imagem, nome, preco, id }){
         
-        const div = document.createElement("div")
-        const img = document.createElement("img");
+        const div = document.createElement("div");
+        const img = document.createElement("img"); 
         const cat = document.createElement("button");
         const name = document.createElement("h2");
         const description = document.createElement("p");
         const price = document.createElement("p");
         const button = document.createElement("button");
-        const imgButton = document.createElement("img");
         const section = document.createElement("section")
         const buttonRemove = document.createElement("button")
+        
+        buttonRemove.addEventListener('click', () => {
+            
+            const productsLocal = JSON.parse(localStorage.getItem('products'))   
+
+            Local.cart.splice(
+            Local.cart.findIndex((p) => p.id === id),
+                1
+            );
+            
+            // REMOVER PRODUTOS DO LOCAL STORAGE.
+
+            const ulCart = document.getElementById('emptyCar');
+            ulCart.removeChild(div);
+        })
 
 
         div.id = id;
@@ -45,17 +59,13 @@ class Vitrine {
         buttonRemove.innerText = "🗑️";
         buttonRemove.id = id;
         buttonRemove.classList.add("remove");
-        imgButton.src = ".././public/images/ButtonCart.png";
         button.classList.add("add");
-        imgButton.classList.add("add");
-        imgButton.id = id;
 
         div.appendChild(img);
-        div.appendChild(cat);
+        div.appendChild(cat)
         div.appendChild(name);
         div.appendChild(description);
         section.appendChild(price);
-        button.appendChild(imgButton)
         section.appendChild(button)
         div.appendChild(section)
         section.appendChild(buttonRemove)

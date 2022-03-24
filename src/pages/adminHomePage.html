@@ -9,16 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Poppins&family=Spectral&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="public/reset.css">
-    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="../../public/reset.css">
+    <link rel="stylesheet" href="../../public/adminHome.css">
     <title>Kenzie Food</title>
 </head>
 
 <body>
     <header>
-        <div class="detailsLogoRegister">
-            <img src="public/images/kenziefoodlogo.png" alt="logo kenzie">
-            <a href="./src/pages/register.html">Criar Conta</a>
+        <div class="detailsLogoAdmin">
+            <img src="../../public/images/kenziefoodlogo.png" alt="logo kenzie">
+            <a href="./admin.html">ADMIN</a>
         </div>
        
             <div class="inputButton">
@@ -30,9 +30,9 @@
     <div class="button">
         <!--filtros-->
         <button id="buttonCategoria" class="all">Todos</button>
-        <button id="buttonCategoria" class="bakery">🥖 Panificadora</button>
-        <button id="buttonCategoria" class="fruits">🍉 Frutas</button>
-        <button id="buttonCategoria" class="drinks">🥂 Bebidas</button>
+        <button id="buttonCategoria" class="bakery"><img src="../../public/images/iconBread.png"> Panificadora</button>
+        <button id="buttonCategoria" class="fruits"><img src="../../public/images/IconFruits.png"> Frutas</button>
+        <button id="buttonCategoria" class="drinks"><img src="../../public/images/iconGlassWine.png"> Bebidas</button>
     </div>
 
     <div class="vitrine">
@@ -47,14 +47,14 @@
             <!--carrinho-->
 
             <div class="title">
-                <img src="public/images/carrinho.png" alt="">
+                <img src="../../public/images/carrinho.png" alt="">
                 <h1>Carrinho</h1>
             </div>
             <div id="emptyCar">
 
                 <!-- carrinho vazio -->
 
-                <img src="public/images/cart.png" alt="carrinho">
+                <img src="../../public/images/cart.png" alt="carrinho">
 
                 <p>Por enquanto não temos produto no carrinho</p>
             </div>
@@ -79,10 +79,8 @@
             </div>
         </section>
     </div>
-    <script type="module" src="script.js"></script>
-    <script type="module" src="src/models/template.js"></script>
-    <script type="module" src="src/requests/requests.js"></script>
-    <script type="module" src="src/controllers/filter.js"></script>
+    <script type="module" src="/scriptAdmin.js"></script>
+
 </body>
 
 </html>

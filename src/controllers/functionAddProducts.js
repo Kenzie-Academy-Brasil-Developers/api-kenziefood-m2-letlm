@@ -8,7 +8,7 @@ class CartProducts{
         const btnCart = event.target;
         const products = await KenzieFood.getPublic();
  
-        if(btnCart.tagName === "IMG"){
+        if(btnCart.tagName === "BUTTON"){
             const filterProducts = products.filter((product) => {
                 return btnCart.id == product.id;
             })

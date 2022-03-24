@@ -32,17 +32,17 @@ header {
 
 
 
-.detailsLogoRegister{
+.detailsLogoAdmin{
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
 
-.detailsLogoRegister img{
+.detailsLogoAdmin img{
     margin-right: 70px;
 }
 
-.detailsLogoRegister a{
+.detailsLogoAdmin a{
     text-decoration: none;
     background-color: var(--color-primary);
     color: var(--color-background-1);
@@ -51,7 +51,7 @@ header {
     border-radius: 8px;
 }
 
-.detailsLogoRegister a:hover{
+.detailsLogoAdmin a:hover{
     cursor: pointer;
     background-color: var(--color-gray-4);
     color: var(--color-gray-1);

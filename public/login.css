@@ -40,7 +40,7 @@ nav img {
     color: var(--color-black);
 }
 .details span a{
-    color: var(--color-white);
+    color: var(--color-primary);
     font-weight: bold;
     text-decoration: none;
 }
