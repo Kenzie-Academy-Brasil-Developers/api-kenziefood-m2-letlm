@@ -5,9 +5,9 @@ class Vitrine {
     static main = document.getElementById('mainProducts')
     
     static async productList(){
-
-        this.main.innerText = ""
         const products = await KenzieFood.getPublic()
+        
+        this.main.innerText = ""
         
         products.forEach((product) => {
             const templateProducts = this.createVitrine(product)

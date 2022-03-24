@@ -7,26 +7,36 @@ const inputPesquisa = document.querySelector("input");
 
 
 class Filter {
+    static async listCategories(){
+        Vitrine.main.innerHTML = ""
+        const products = await KenzieFood.getPublic()
+
+        products.forEach((products) => {
+            const productsVitrine = Vitrine.createVitrine(products)
+
+            Vitrine.main.appendChild(productsVitrine)
+        })
+    }
 
     static ValidationCategories(button) {
         switch (button.target.className) {
 
             case "all":
-                return Vitrine.vitrineProdutos(objproducts);
+                return Vitrine.productList(objproducts);
                 break;
 
             case "bakery":
                 const ListaPanificadora = objproducts.filter(element => {
                     return element.categoria === "Panificadora";
                 });
-                return Vitrine.vitrineProdutos(ListaPanificadora);
+                return Vitrine.productList(ListaPanificadora);
                 break;
 
             case "fruits":
                 const ListaFrutas = objproducts.filter(element => {
                     return element.categoria === "Frutas";
                 });
-                return Vitrine.vitrineProdutos(ListaFrutas);
+                return Vitrine.productList(ListaFrutas);
                 break;
 
             case "drinks":
@@ -34,7 +44,7 @@ class Filter {
                     return element.categoria === "Bebidas";
                 });
 
-                return Vitrine.vitrineProdutos(ListaBebidas);
+                return Vitrine.productList(ListaBebidas);
                 break;
 
         }
@@ -61,7 +71,7 @@ class Filter {
             });
 
 
-            return Vitrine.vitrineProdutos(ProductsSearch);
+            return Vitrine.productList(ProductsSearch);
         });
     };
 };

@@ -59,8 +59,8 @@
     
 }
 
-let objproducts = await KenzieFood.getPublic()
-  
+const objproducts = await KenzieFood.getPublic()
+console.log(objproducts)
 
 
 export{objproducts,KenzieFood};
