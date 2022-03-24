@@ -65,7 +65,10 @@ class Vitrine {
             ModalProduct.openModalEdit(id)
         })
         
-
+        buttonDelete.addEventListener("click", () => {
+            ModalProduct.openModalDelete(id)
+        })
+        
         button.appendChild(imgButton);
         buttonDelete.appendChild(imgButtonDelete)
         divTwo.appendChild(spanCats);

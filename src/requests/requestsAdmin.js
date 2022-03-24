@@ -57,7 +57,7 @@ class RequestAdmin {
 
         const token = this.localStorage.token
 
-        await fetch(`${this.API_URL}my/products/:${id}`, {
+        await fetch(`${this.API_URL}my/products/${id}`, {
             "method": "DELETE",
             "headers": {
                 "Authorization": `Bearer ${token}`
