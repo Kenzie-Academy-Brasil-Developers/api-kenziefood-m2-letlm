@@ -263,12 +263,12 @@ class ModalProduct {
             labelThree.classList.add("categoryLegend")
             labelFour.innerText = "Valor do Produto"
             labelFour.classList.add("titlePrice")
-            inputPrice.placeholder = ""
+            inputPrice.value = `${preco}`
             inputPrice.type = "text"
             inputPrice.name = "preco"
             labelFive.innerText = "Link da imagem"
             labelFive.classList.add("imageLink")
-            inputImage.placeholder = ""
+            inputImage.value = `${imagem}`
             inputImage.type = "url"
             inputImage.name = "imagem"
             btnLeave.classList.add("btnLeave")
@@ -308,6 +308,33 @@ class ModalProduct {
 
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer")
+        })
+
+        btnRegister.addEventListener("click", (event) => {
+            event.preventDefault()
+
+            const data = {}
+
+            for (let i = 0; i < form.length; i++) {
+
+                const {name, value, type, checked} = form[i]
+                console.log(name)
+                if (name && type !== "radio") {
+                    data[name] = value
+                } else if (checked) {
+                    data["categoria"] = value
+                }
+
+                form[i].value = ""
+            }
+
+            console.log(data)
+            RequestAdmin.editProducts(productId, data)
+
+        //    .then(data => {
+        //         div.classList.add("desaparecer")
+               
+        // })
         })
 
         btnLeave.addEventListener("click", () => {

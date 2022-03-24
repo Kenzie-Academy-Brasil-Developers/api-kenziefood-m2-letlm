@@ -589,7 +589,13 @@ input {
     align-items: center;
     justify-content: center;
     width: 136px;
-    padding:23px 20px 30px 10px;
+    padding: 28px;
+}
+
+.kenzieLogo {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
 }
 
 .categoryLegend {
