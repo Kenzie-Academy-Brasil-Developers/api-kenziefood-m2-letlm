@@ -1,6 +1,4 @@
-import {
-    RequestAdmin
-} from "../requests/requestsAdmin.js"
+import {RequestAdmin} from "../requests/requestsAdmin.js"
 
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd")
@@ -12,10 +10,10 @@ class ModalProduct {
     }
 
 
-    // static deleteProduct() {
-    //     const getButtonDelete = document.querySelector(".deleteProduct")
-    //     getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
-    // }
+    //static deleteProduct() {
+      //   const getButtonDelete = 
+       //  getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
+    //}
 
     static divAddModal = document.querySelector(".modalAdd")
 
@@ -173,10 +171,15 @@ class ModalProduct {
         })
     }
 
-    static async openModalEdit() {
+    static async openModalEdit(productId) {
 
         const products = await RequestAdmin.getMyProducts()
+        console.log(products)
+        const productsSearch = products.find((element) => {
+            return element.id === productId
+        })
 
+        const {nome, preco, categoria, descricao, id, imagem} = productsSearch
 
         ModalProduct.divAddModal.innerHTML = ""
 
@@ -226,10 +229,14 @@ class ModalProduct {
         const btnRegister = document.createElement("button")
         const btnLeave = document.createElement("button")
 
-        for (let i = 0; i < products.length; i++) {
-
-            const {nome, preco, categoria, descricao, id, imagem} = products[i]
-
+        
+        if(categoria === "Panificadora"){
+            radioBread.checked = true
+        } else if (categoria === "Bebidas"){
+            radioDrinks.checked = true
+        } else if (categoria === "Frutas"){
+            radioFruits.checked = true
+        }
             div.id = "modalEdit"
             div.classList.add("showModalEdit")
             divBox.classList.add("boxModalEdit")
@@ -265,12 +272,10 @@ class ModalProduct {
             inputImage.type = "url"
             inputImage.name = "imagem"
             btnLeave.classList.add("btnLeave")
-            btnLeave.innerText = "Excluir"
+            btnLeave.innerText = "Cancelar"
             btnRegister.classList.add("btnSave")
             btnRegister.innerText = "Salvar alterações"
-
-        }
-
+    
 
         divCategory.appendChild(radioBread)
         divCategory.appendChild(labelBread)
@@ -305,20 +310,18 @@ class ModalProduct {
             div.classList.add("desaparecer")
         })
 
-
-
-        // btnLeave.addEventListener("click", () => {
-        //     EXCLUIR O CADASTRO
-        // })
+        btnLeave.addEventListener("click", () => {
+            div.classList.add("desaparecer")
+        })
 
         // btnRegister.addEventListener("click", () => {
         //     SALVAR A ALTERAÇÃO
         // })
     }
 
-    static openModalDelete() {
-        this.divAddModal.innerHTML = ""
-
+    static async openModalDelete(productId) {
+        this.divAddModal.innerHTML = ""  
+        
         const div = document.createElement("div")
         const divBox = document.createElement("div")
         const divDelete = document.createElement("div")
@@ -329,8 +332,7 @@ class ModalProduct {
         const divBtns = document.createElement("div")
         const btnYes = document.createElement("button")
         const btnNo = document.createElement("button")
-
-
+        
         div.id = "modalDelete"
         div.classList.add("showModalDelete")
         divBox.classList.add("boxModalDelete")
@@ -347,30 +349,32 @@ class ModalProduct {
         btnYes.innerText = "Sim"
         btnNo.classList.add("no")
         btnNo.innerText = "Não"
-
-
+        
+        
         divDelete.appendChild(spanStatus)
         divDelete.appendChild(buttonExit)
-
+        
         divStatus.appendChild(spanMessage)
         divBtns.appendChild(btnYes)
         divBtns.appendChild(btnNo)
-
+        
         divBox.appendChild(divDelete)
         divBox.appendChild(divStatus)
         divBox.appendChild(divBtns)
-
+        
         div.appendChild(divBox)
-
+        
         this.divAddModal.appendChild(div)
-
+        
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer")
         })
 
-        // btnYes.addEventListener("click", () => {
-        //     VAI APAGAR O PRODUTO
-        // })
+        btnYes.addEventListener("click", () => {
+            RequestAdmin.deleteProducts(productId)
+            }
+            
+        )
 
         btnNo.addEventListener("click", () => {
             div.classList.add("desaparecer")

@@ -25,6 +25,7 @@ class Vitrine {
             const templateProducts = this.createVitrineAdmin(product)
             this.ulAdminPage.appendChild(templateProducts)
         })
+
     }
 
     static createVitrineAdmin({ categoria, descricao, imagem, nome, id, preco}){
@@ -42,7 +43,8 @@ class Vitrine {
         const buttonDelete = document.createElement("button");
         const imgButtonDelete = document.createElement("img");
 
-
+        li.id = `${id}`
+        li.classList.add("teste")
         div.classList.add("products");
         img.classList.add("imgProduct");
         img.src = `${imagem}`;
@@ -60,9 +62,14 @@ class Vitrine {
         imgButtonDelete.src = "/public/images/iconDelete.png";
 
         
-        button.addEventListener("click", ModalProduct.openModalEdit)
+        button.addEventListener("click", () => {
+            ModalProduct.openModalEdit(id)
+        })
         
-
+        buttonDelete.addEventListener("click", () => {
+            ModalProduct.openModalDelete(id)
+        })
+        
         button.appendChild(imgButton);
         buttonDelete.appendChild(imgButtonDelete)
         divTwo.appendChild(spanCats);
