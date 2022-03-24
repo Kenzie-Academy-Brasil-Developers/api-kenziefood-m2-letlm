@@ -245,7 +245,7 @@ button:hover {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0px -200px 0px 606px;
+    margin: 0px -28px 0px 606px;
 }
 
 @media (min-width: 768px) {
@@ -280,9 +280,9 @@ button:hover {
         align-items: center;
     }
     .imgProduct {
-        width: 32px;
-        height: 32px;
-        margin: 0px -180px 0px 38px;
+        width: 50px;
+        height: 54px;
+        margin-right: 108px;
     }
 
     .indice {
@@ -305,7 +305,6 @@ button:hover {
         letter-spacing: 0em;
         text-align: left;
         color: var(--color-gray-5);
-        margin-left: 208px;
     }
 
     li {
@@ -332,7 +331,7 @@ button:hover {
     }
     .nameProduct {
         
-        margin-left: -140px;
+        margin-left: -393px;
         font-weight: 500;
         color: black;
     }
@@ -346,6 +345,7 @@ button:hover {
     }
 
     .descriptionAndAction {
+        margin-right: -132px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -579,12 +579,12 @@ button:hover {
     justify-content: center;
     align-items: center;
     width: 100px;
-    background: var(--color-gray-2);
     border-radius: 8px;
 }
 
 .descriptionProduct {
     margin-right: 340px;
+    max-width: 116px;
 }
 
 .legend {
@@ -613,7 +613,13 @@ button:hover {
     align-items: center;
     justify-content: center;
     width: 136px;
-    padding:23px 20px 30px 10px;
+    padding: 28px;
+}
+
+.kenzieLogo {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
 }
 
 .categoryLegend {

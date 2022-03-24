@@ -41,13 +41,13 @@ class RequestAdmin {
 
         const token = this.localStorage.token
 
-        const response = await fetch(`${this.API_URL}my/products/:${id}`, {
-            "method": "PATH",
+        const response = await fetch(`${this.API_URL}my/products/${id}`, {
+            "method": "PATCH",
             "headers": {
                 "Authorization": `Bearer ${token}`,
                 "Content-Type": "application/json"
             },
-            "body": JSON.stringify({ newContent })
+            "body": JSON.stringify(newContent)
         })
         const data = await response.json()
         return data
