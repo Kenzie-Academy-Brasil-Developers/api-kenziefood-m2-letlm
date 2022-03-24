@@ -41,7 +41,6 @@ class Vitrine {
 
             const ulCart = document.getElementById('emptyCar');
             ulCart.removeChild(div);
-           
         })
 
 
