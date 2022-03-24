@@ -87,4 +87,5 @@ class Vitrine {
         };
     }
 
+    
 export {Vitrine}

@@ -3,7 +3,6 @@ import {RequestAdmin} from "../requests/requestsAdmin.js"
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd")
 
-
     static newProduct() {
         const getButton = document.querySelector(".addProductCard")
         getButton.addEventListener("click", this.openModal.bind(this))
@@ -399,6 +398,22 @@ class ModalProduct {
 
         btnNo.addEventListener("click", () => {
             div.classList.add("desaparecer")
+        })
+    }
+
+    static logout(){
+        const logOff = document.querySelector(".adminProfile")
+        logOff.addEventListener("click", () => {
+            this.modalLogout.bind(this)})
+    }
+
+    static modalLogout(){
+        const modals = document.querySelector(".logoutAdmin")
+        modals.classList.add("showLogout")
+        modals.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modals.classList.remove("showLogout")
+            }
         })
     }
 }
