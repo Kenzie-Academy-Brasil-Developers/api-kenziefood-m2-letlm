@@ -494,11 +494,6 @@ button:hover {
     border: 1px solid #8c8e92;
 }
 
-
-#balance {
-    
-}
-
 .flex {
     display: flex;
     flex-direction: column;
