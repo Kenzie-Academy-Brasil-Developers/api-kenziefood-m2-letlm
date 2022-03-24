@@ -17,9 +17,10 @@ class ModalProduct {
 
     static deleteProduct() {
         const getButtonDelete = document.querySelector(".deleteProduct")
-
         getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
     }
+    static divAddModal = document.querySelector(".modalAdd") 
+
 
     static openModal() {
 
@@ -36,6 +37,7 @@ class ModalProduct {
         const labelTwo = document.createElement("label")
         const inputDescription = document.createElement("input")
         const labelThree = document.createElement("label")
+        
         const divCategory = document.createElement("div")
         divCategory.classList.add("category")
         const radioBread = document.createElement("input")
@@ -245,7 +247,7 @@ class ModalProduct {
         divBox.appendChild(divModal)
         div.appendChild(divBox)
         this.divAddModal.appendChild(div)
-
+        
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer")
         })
