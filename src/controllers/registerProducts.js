@@ -54,4 +54,6 @@ class FormCreated {
 // FormCreated.start()
 // FormCreated.postProduct()
 ModalProduct.newProduct()
+ModalProduct.editProduct()
+ModalProduct.deleteProduct()
 export {FormCreated}
