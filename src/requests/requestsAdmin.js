@@ -66,4 +66,6 @@ class RequestAdmin {
     }
 }
 
-export { RequestAdmin }
+const productobj = await RequestAdmin.getMyProducts()
+
+export { productobj ,RequestAdmin }
