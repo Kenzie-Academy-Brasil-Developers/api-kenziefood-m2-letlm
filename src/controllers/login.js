@@ -17,7 +17,7 @@ class Login {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return alert("preencha o bglho")
+                    return this.modalDataError()
                 }
                 newLogin[name] = value
             }
@@ -28,13 +28,43 @@ class Login {
             .then(data => {
     
                 if (data.error === "password invalid") {
-                    alert("Senha invalida")
+                    this.modalUserPass()
                 } else if (data.error === `Email: ${newLogin.email} does not exists`) {
-                    alert("Email invalido")
+                    this.modalUserEmail()
                 } else {
                     window.location.href = "/src/pages/adminHomePage.html"
                 }
             })
+    }
+
+    static modalDataError(){
+        const modal = document.querySelector(".modalErrorData")
+        modal.classList.add("showData")
+        modal.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modal.classList.remove("showData")
+            }
+        })
+    }
+
+    static modalUserEmail(){
+        const modalIncorret = document.querySelector(".modalEmail")
+        modalIncorret.classList.add("showEmail")
+        modalIncorret.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalIncorret.classList.remove("showEmail")
+            }
+        })
+    }
+
+    static modalUserPass(){
+        const modalPass = document.querySelector(".modalPassword")
+        modalPass.classList.add("showPass")
+        modalPass.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalPass.classList.remove("showPass")
+            }
+        })
     }
 
 }
