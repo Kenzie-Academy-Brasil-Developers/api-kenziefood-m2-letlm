@@ -311,7 +311,7 @@ input {
         background-color: transparent;
     }
 
-    .showModalStatusOk, .showModalStatusError {
+    /* .showModalStatusOk, .showModalStatusError {
         width: 100vw;
         height: 100vh;
         position: fixed;
@@ -422,24 +422,189 @@ input {
         background: var(--color-primary);
         border-radius: 0px 0px 8px 8px;
 
-    }
+    } */
 }
 
 .showModalEdit{
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
 } 
 
-.desaparecer{
+.btnFruits {
+    width: 300px;
+}
+
+.boxModalEdit {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+}
+
+.edit {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    height: 70px;
+    background-color: #F8F9FA;
+    
+}
+
+.btnExit {
+    background-color: #E9ECEF;
+    border: none;
+    margin: 22px 23px 0 0;
+    width: 31px;
+    height: 30px;
+    border-radius: 4px;
+    color: #868E96;
+}
+
+.statusSpan {
+    margin-left: 33px;
+    font-size: 14px;
+    color: black;
+    line-height: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.newProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFFFFF;
+    height: 553px;
+    width: 496px;
+}
+
+.newProduct label {
+    margin-left: 3px;
+}
+
+.newProduct input{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 10px;
+    background: #F8F9FA;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 16px;
+    border: 1.5px solid var(--color-gray-4);
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 440px;
+}
+
+.titleProduct{
+    margin-right: 318px;
+    margin-bottom: -13px;
+    font-size: 14px;
+    color: #212529;
+}
+
+.subtitleProduct{
+    margin-right: 367px;
+    margin-bottom: -13px;
+    font-size: 14px;
+    color: #212529;
+}
+
+.titlePrice {
+    margin-right: 326px;
+    margin-bottom: -13px;
+    font-size: 14px;
+    color: #212529;
+}
+
+.category {
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.legend {
+    display: flex;
+    float: left;
+    margin: 1% 0 1% 1.6%;
+}
+  
+.category input {
     display: none;
 }
-
-.aparecer{
+  
+.category label{
+    position: relative;
+    color: #868E96;
+    background: #F8F9FA;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 32px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 136px;
 }
 
-.showModalError {
+.categoryLegend {
+    margin-right: 364px;
+    margin-bottom: -13px;
+    font-size: 14px;
+    color: #212529;
+}
+
+.imageLink {
+    margin-right: 334px;
+    margin-bottom: -13px;
+    font-size: 14px;
+    color: #212529;
+}
+
+.btnRegister {
+    width: 440px;
+    height: 52px;
+    border-radius: 32px;
+    border: none;
+    color: white;
+    background-color: #FF2253;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.btnRegister:hover {
+    cursor: pointer;
+    color: black;
+    background: rgb(230, 207, 212);
+}
+
+.btnExit:hover {
+    cursor: pointer;
+    background-color:#FF2253;
+    color: black;
+}
+
+input:checked + label{
+	border: none;
+	background-color:#FF2253;
+    color: white;
+}
+
+/* .showModalError {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
@@ -449,10 +614,6 @@ input {
     display: none;
     justify-content: center;
     align-items: center;
-}
-
-.aparecer {
-    display: flex;
 }
 
 .boxModalError {
@@ -485,4 +646,8 @@ input {
     font-weight: bold;
     font-size: 15px;
     color: var(--color-white);
+} */
+
+.desaparecer{
+    display: none;
 }
