@@ -1,70 +1,82 @@
 import {objproducts} from "./../requests/requests.js"
 import {Vitrine} from "./../models/template.js"
 
-const buttonCategorias = document.querySelectorAll("#buttonCategoria");
+const buttonAll     = document.querySelector(".all")
+const buttonBakery  = document.querySelector(".bakery")
+const buttonFruits  = document.querySelector(".fruits")
+const buttonDrinks  = document.querySelector(".drinks")
 const inputPesquisa = document.querySelector("input");
-
 
 
 class Filter {
 
-    static ValidationCategories(button) {
-        switch (button.target.className) {
+    static async listCategories(p){
+        Vitrine.main.innerHTML = ""
 
-            case "all":
-                return Vitrine.vitrineProdutos(objproducts);
-                break;
+        p.forEach((products) => {
+            const productsVitrine = Vitrine.createVitrine(products)
 
-            case "bakery":
-                const ListaPanificadora = objproducts.filter(element => {
-                    return element.categoria === "Panificadora";
-                });
-                return Vitrine.vitrineProdutos(ListaPanificadora);
-                break;
-
-            case "fruits":
-                const ListaFrutas = objproducts.filter(element => {
-                    return element.categoria === "Frutas";
-                });
-                return Vitrine.vitrineProdutos(ListaFrutas);
-                break;
-
-            case "drinks":
-                const ListaBebidas = objproducts.filter(element => {
-                    return element.categoria === "Bebidas";
-                });
-
-                return Vitrine.vitrineProdutos(ListaBebidas);
-                break;
-
-        }
+            Vitrine.main.appendChild(productsVitrine)
+        })
     }
-    static FilterCategorias() {
 
-        buttonCategorias.forEach((element) => {
-
-            element.addEventListener("click", Filter.ValidationCategories)
-            
-        });
-
-    }
 
     static FilterInput() {
 
         inputPesquisa.addEventListener("keyup", () => {
 
             const valueInput = document.querySelector("input").value
-            const ProductsSearch = objproducts.filter(element => {
-
-                return element.nome.toLowerCase().includes(valueInput.toLowerCase());
+            const ProductsSearch = objproducts.filter((product) => {
+                
+                return product.nome.toLowerCase().includes(valueInput.toLowerCase()) || product.categoria.toLowerCase().includes(valueInput.toLocaleLowerCase());
 
             });
 
-
-            return Vitrine.vitrineProdutos(ProductsSearch);
+            if(ProductsSearch != 0){
+                return this.listCategories(ProductsSearch);
+            }
         });
     };
+
+    static validationAll() {
+        const allProducts = objproducts.filter((product) => {
+            return product
+        });
+
+        return Filter.listCategories(allProducts);
+    }
+
+    static validationBakery() {
+        const bakeryProducts = objproducts.filter((product) => {
+            return product.categoria === "Panificadora"
+        });
+
+        return Filter.listCategories(bakeryProducts);
+    }
+
+    static validationFruits() {
+        const fruitsProducts = objproducts.filter((product) => {
+            return product.categoria === "Frutas"
+        });
+
+        return Filter.listCategories(fruitsProducts);
+    }
+
+    static validationDrinks() {
+        const drinksProducts = objproducts.filter((product) => {
+            return product.categoria === "Bebidas"
+        });
+
+        return Filter.listCategories(drinksProducts);
+    }
 };
 
-Filter.ValidationCategories()
+
+buttonAll.addEventListener("click", Filter.validationAll)
+buttonBakery.addEventListener("click", Filter.validationBakery)
+buttonFruits.addEventListener("click", Filter.validationFruits)
+buttonDrinks.addEventListener("click", Filter.validationDrinks)
+
+
+Filter.FilterInput()
 export {Filter}
