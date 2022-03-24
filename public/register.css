@@ -110,7 +110,7 @@ main {
     text-decoration: none;
 }
 
-.modalErrorRegister, .showModalErrorNull{ 
+.modalErrorData{ 
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
@@ -122,12 +122,12 @@ main {
     align-items: center;
 }
 
-.aparecer {
+.showData {
     display: flex; 
 }
 
-.boxModalErrorRegister, .boxModalError {
-    padding: 12px;
+.boxData{
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -135,25 +135,64 @@ main {
     margin-right: 0;
     margin-left: 0;
     margin-top: -250px;
-    width: 200px;
+    width: 160px;
     height: 90px;
     border: 2px solid var(--color-gray-1);
     background-color: var(--color-gray-1);
-    border-radius: 5px;
+    border-radius: 32px;
     font-family: 'Inter';
     font-weight: bold;
-    font-size: 18px;
+    font-size: 15px;
+}
+
+#errorFixed{
+    margin-top: 15px;
 }
 
 #btnError{
     background-color: var(--color-primary);
-    border: 2px solid white;
-    border-radius: 4px;
-    margin-top: 20px;
-    width: 50px;
-    height: 35px;
+    border: 2px solid var(--color-white);
+    border-radius: 9px;
+    margin-top: 10px;
+    width: 40px;
+    height: 30px;
     font-family: 'Inter';
     font-weight: bold;
     font-size: 15px;
     color: var(--color-white);
+}
+
+.modalRegisterDoble{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    position: absolute;
+    top: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.showDoble {
+    display: flex; 
+}
+
+.boxDoble{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: -250px;
+    width: 140px;
+    height: 90px;
+    border: 2px solid var(--color-gray-1);
+    background-color: var(--color-gray-1);
+    border-radius: 32px;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 15px;
 }
