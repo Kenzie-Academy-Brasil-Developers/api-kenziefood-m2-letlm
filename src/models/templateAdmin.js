@@ -88,4 +88,5 @@ class Vitrine {
         }
 }
 
+    
 export {Vitrine}

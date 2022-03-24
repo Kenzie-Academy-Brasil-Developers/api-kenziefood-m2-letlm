@@ -4,7 +4,6 @@ import {RequestAdmin} from "../requests/requestsAdmin.js";
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd");
 
-
     static newProduct() {
         const getButton = document.querySelector(".addProductCard");
         getButton.addEventListener("click", this.openModal.bind(this));
@@ -164,16 +163,46 @@ class ModalProduct {
             }
 
             RequestAdmin.createdProduct(data)
+                .then(data => {
+
+                    if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
+                      
+                        div.classList.add("desaparecer")
+                    } else {
+                        
+                        div.classList.add("desaparecer")
+
             .then(async data => {
                 
                 if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
-                    alert("Erro ao cadastrar o produto, tente novamente!");
+                    this.modalErrorProduct()
                     div.classList.add("desaparecer");
                 } else {
                     div.classList.add("desaparecer");
+                    this.modalProductOk()
                     await Vitrine.productsInAdminPage();
                     }
                 })
+        })
+    }
+
+    static modalErrorProduct(){
+        const modalError = document.querySelector(".errorRegister")
+        modalError.classList.add("showProductError")
+        modalError.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalError.classList.remove("showProductError")
+            }
+        })
+    }
+
+    static modalProductOk(){
+        const modalOk = document.querySelector(".okRegister")
+        modalOk.classList.add("showProductOk")
+        modalOk.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalOk.classList.remove("showProductOk")
+            }
         })
     }
 
@@ -429,6 +458,22 @@ class ModalProduct {
 
         btnNo.addEventListener("click", () => {
             div.classList.add("desaparecer");
+        })
+    }
+
+    static logout(){
+        const logOff = document.querySelector(".adminProfile")
+        logOff.addEventListener("click", () => {
+            this.modalLogout.bind(this)})
+    }
+
+    static modalLogout(){
+        const modals = document.querySelector(".logoutAdmin")
+        modals.classList.add("showLogout")
+        modals.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modals.classList.remove("showLogout")
+            }
         })
     }
 }

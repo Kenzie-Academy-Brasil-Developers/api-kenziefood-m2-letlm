@@ -16,7 +16,7 @@ class Register {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return this.modalErrorNull();
+                    return this.modalDataError();
                 }
                     newAcess[name] = value
             }
@@ -26,35 +26,36 @@ class Register {
     
         .then(data => {
             if (data.status === "Error") {
-                this.modalErrorNull();
+                this.modalDataError()
             } else if (data === "User Already Exists!"){
-                this.modalErrorNull();
+                this.modalUserError()
             } else {
                 window.location.href = "/src/pages/login.html";
             }
         })
     }
 
-    // static modalError(){
-    //     const modal = document.querySelector("showModalErrorNull")
-    //     modal.classList.add("aparecer")
-    //     modal.addEventListener("click", (event) => {
-    //         if(event.target.tagName === "BUTTON"){
-    //             modal.classList.remove("aparecer")
-    //         }
-    //     })
-    // }
-
-    static modalErrorNull(){
-        const modalNull = document.querySelector("#modalError");
-        modalNull.classList.add("aparecer");
-        modalNull.addEventListener("click", (event) => {
+    static modalDataError(){
+        const modal = document.querySelector(".modalErrorData")
+        modal.classList.add("showData")
+        modal.addEventListener("click", (event) => {
             if(event.target.tagName === "BUTTON"){
-                modalNull.classList.remove("aparecer");
+                modal.classList.remove("showData")
             }
         })
     }
-    
+
+
+    static modalUserError(){
+
+        const dobleUser = document.querySelector(".modalRegisterDoble");
+        dobleUser.classList.add("showDoble");
+
+        dobleUser.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                dobleUser.classList.remove("showDoble")
+    })
+    }    
 
 }
 
