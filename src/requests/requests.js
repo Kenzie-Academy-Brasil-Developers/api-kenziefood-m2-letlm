@@ -60,7 +60,6 @@
 }
 
 const objproducts = await KenzieFood.getPublic()
-console.log(objproducts)
 
 
-export{objproducts,KenzieFood};
+export{objproducts, KenzieFood};
