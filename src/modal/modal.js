@@ -173,10 +173,15 @@ class ModalProduct {
         })
     }
 
-    static async openModalEdit() {
+    static async openModalEdit(productId) {
 
         const products = await RequestAdmin.getMyProducts()
+        console.log(products)
+        const productsSearch = products.find((element) => {
+            return element.id === productId
+        })
 
+        const {nome, preco, categoria, descricao, id, imagem} = productsSearch
 
         ModalProduct.divAddModal.innerHTML = ""
 
@@ -226,10 +231,14 @@ class ModalProduct {
         const btnRegister = document.createElement("button")
         const btnLeave = document.createElement("button")
 
-        for (let i = 0; i < products.length; i++) {
-
-            const {nome, preco, categoria, descricao, id, imagem} = products[i]
-
+        
+        if(categoria === "Panificadora"){
+            radioBread.checked = true
+        } else if (categoria === "Bebidas"){
+            radioDrinks.checked = true
+        } else if (categoria === "Frutas"){
+            radioFruits.checked = true
+        }
             div.id = "modalEdit"
             div.classList.add("showModalEdit")
             divBox.classList.add("boxModalEdit")
@@ -268,9 +277,7 @@ class ModalProduct {
             btnLeave.innerText = "Excluir"
             btnRegister.classList.add("btnSave")
             btnRegister.innerText = "Salvar alterações"
-
-        }
-
+    
 
         divCategory.appendChild(radioBread)
         divCategory.appendChild(labelBread)

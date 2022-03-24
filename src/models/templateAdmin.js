@@ -42,7 +42,7 @@ class Vitrine {
         const buttonDelete = document.createElement("button");
         const imgButtonDelete = document.createElement("img");
 
-
+        li.id = `${id}`
         div.classList.add("products");
         img.classList.add("imgProduct");
         img.src = `${imagem}`;
@@ -60,7 +60,9 @@ class Vitrine {
         imgButtonDelete.src = "/public/images/iconDelete.png";
 
         
-        button.addEventListener("click", ModalProduct.openModalEdit)
+        button.addEventListener("click", () => {
+            ModalProduct.openModalEdit(id)
+        })
         
 
         button.appendChild(imgButton);
