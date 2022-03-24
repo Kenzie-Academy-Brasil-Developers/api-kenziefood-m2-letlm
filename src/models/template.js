@@ -1,3 +1,4 @@
+import { Local } from "../localstorage/localstorage.js";
 import { KenzieFood } from "../requests/requests.js";
 
 class Vitrine {
@@ -5,9 +6,9 @@ class Vitrine {
     static main = document.getElementById('mainProducts')
     
     static async productList(){
+        const products = await KenzieFood.getPublic()
 
         this.main.innerText = ""
-        const products = await KenzieFood.getPublic()
         
         products.forEach((product) => {
             const templateProducts = this.createVitrine(product)
@@ -19,15 +20,29 @@ class Vitrine {
         
         const div = document.createElement("div");
         const img = document.createElement("img"); 
-        const divCart = document.createElement("div"); 
         const cat = document.createElement("button");
         const name = document.createElement("h2");
         const description = document.createElement("p");
         const price = document.createElement("p");
         const button = document.createElement("button");
-        const imgButton = document.createElement("img");
         const section = document.createElement("section")
         const buttonRemove = document.createElement("button")
+        
+        buttonRemove.addEventListener('click', () => {
+            
+            const productsLocal = JSON.parse(localStorage.getItem('products'))   
+
+            Local.cart.splice(
+            Local.cart.findIndex((p) => p.id === id),
+                1
+            );
+            
+            // REMOVER PRODUTOS DO LOCAL STORAGE.
+
+            const ulCart = document.getElementById('emptyCar');
+            ulCart.removeChild(div);
+           
+        })
 
 
         div.id = id;
@@ -47,8 +62,6 @@ class Vitrine {
         buttonRemove.id = id;
         buttonRemove.classList.add("remove");
         button.classList.add("add");
-        imgButton.classList.add("add");
-        imgButton.id = id;
 
         div.appendChild(img);
         div.appendChild(cat)
