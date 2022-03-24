@@ -5,8 +5,6 @@ import {uptadeQuantity} from "../controllers/carrinhototal.js"
 import {uptadeTotal} from "../controllers/carrinhoprice.js"
 
 
-
-
 class CartProducts{
 
     static async addProducts(event){
@@ -31,17 +29,15 @@ class CartProducts{
         this.cart.innerHTML = ""
         
         Local.cart.forEach((products) => {
-            const productsCart = Vitrine.createVitrine(products)
+            const productsCart = Vitrine.createVitrine(products);
             
            
-            uptadeTotal()
-            uptadeQuantity()
-            this.cart.appendChild(productsCart)
+            uptadeTotal();
+            uptadeQuantity();
+            this.cart.appendChild(productsCart);
         })
         
     }
-
-
 
 }
 

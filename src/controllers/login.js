@@ -9,15 +9,15 @@ class Login {
 
     static acessLogin(event) {
     
-        event.preventDefault()
-        const forms = document.querySelector("form")
+        event.preventDefault();
+        const forms = document.querySelector("form");
         const newLogin = {}
 
         for (let i = 0; i < forms.length; i++) {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return alert("preencha o bglho")
+                    return alert("preencha o bglho");
                 }
                 newLogin[name] = value
             }
@@ -28,16 +28,18 @@ class Login {
             .then(data => {
     
                 if (data.error === "password invalid") {
-                    alert("Senha invalida")
+                    alert("Senha invalida");
                 } else if (data.error === `Email: ${newLogin.email} does not exists`) {
-                    alert("Email invalido")
+                    alert("Email invalido");
                 } else {
-                    window.location.href = "/src/pages/adminHomePage.html"
+                    window.location.href = "/src/pages/adminHomePage.html";
                 }
             })
     }
 
 }
 
-Login.start()
+Login.start();
+
+
 export { Login }

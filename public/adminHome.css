@@ -398,7 +398,6 @@ button:hover {
 .all {
     width: 88px;
     color: #000000;
-    background-color: var(--color-primary);
     width: 109px;
     height: 48px;
     border-radius: 32px;

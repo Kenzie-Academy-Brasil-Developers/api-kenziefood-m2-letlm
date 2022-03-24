@@ -1,10 +1,10 @@
 import { KenzieFood } from "../requests/requests.js"
 
 class Register {
-    static btnForm = document.querySelector('button')
+    static btnForm = document.querySelector('button');
 
     static start() {
-        this.btnForm.addEventListener("click", this.acess.bind(this))
+        this.btnForm.addEventListener("click", this.acess.bind(this));
     }
 
     static acess(event) {
@@ -16,7 +16,7 @@ class Register {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return this.modalErrorNull()
+                    return this.modalErrorNull();
                 }
                     newAcess[name] = value
             }
@@ -26,11 +26,11 @@ class Register {
     
         .then(data => {
             if (data.status === "Error") {
-                this.modalErrorNull()
+                this.modalErrorNull();
             } else if (data === "User Already Exists!"){
-                this.modalErrorNull()
+                this.modalErrorNull();
             } else {
-                window.location.href = "/src/pages/login.html"
+                window.location.href = "/src/pages/login.html";
             }
         })
     }
@@ -46,17 +46,18 @@ class Register {
     // }
 
     static modalErrorNull(){
-        const modalNull = document.querySelector("#modalError")
-        modalNull.classList.add("aparecer")
+        const modalNull = document.querySelector("#modalError");
+        modalNull.classList.add("aparecer");
         modalNull.addEventListener("click", (event) => {
             if(event.target.tagName === "BUTTON"){
-                modalNull.classList.remove("aparecer")
+                modalNull.classList.remove("aparecer");
             }
         })
     }
     
 
 }
-Register.start()
+
+Register.start();
 
 export { Register }

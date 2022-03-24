@@ -1,4 +1,4 @@
-import {ModalProduct} from "../modal/modal.js"
+import {ModalProduct} from "../modal/modal.js";
 
 
-ModalProduct.newProduct()
+ModalProduct.newProduct();

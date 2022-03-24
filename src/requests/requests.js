@@ -1,8 +1,8 @@
-  import {Local} from "../localstorage/localstorage.js"
+  import {Local} from "../localstorage/localstorage.js";
   
   class KenzieFood {
 
-    static urlApi = "https://kenzie-food-api.herokuapp.com/"
+    static urlApi = "https://kenzie-food-api.herokuapp.com/";
 
     
     static async register(user) {
@@ -13,9 +13,9 @@
             },
             "body": JSON.stringify(user)
     })
-        const data = await response.json()
+        const data = await response.json();
 
-        return data
+        return data;
     }
 
 
@@ -28,12 +28,12 @@
             "body": JSON.stringify(user)
         })
 
-        const data = await response.json()
+        const data = await response.json();
         
-        Local.tokenUser.token = data
-        localStorage.setItem('token', JSON.stringify(Local.tokenUser))
+        Local.tokenUser.token = data;
+        localStorage.setItem('token', JSON.stringify(Local.tokenUser));
 
-        return data
+        return data;
     }
 
 
@@ -41,25 +41,24 @@
         const response = await fetch(`${this.urlApi}products`,{
             "method": "GET"
         })
-        const data = await response.json()
-       // console.log(data)
-        return data
+        const data = await response.json();
+        return data;
         
     }
 
 
     static async getPrivate() {
-        const localStorage = JSON.parse(localStorage.getItem('token'))
-        const token = localStorage.tokenUser.token
+        const localStorage = JSON.parse(localStorage.getItem('token'));
+        const token = localStorage.tokenUser.token;
 
         const response = await fetch(`${this.urlApi}my/products`, { headers :{Authorization: `${token}`}} )
-        const data = await response.json()
-        return data
+        const data = await response.json();
+        return data;
     }
     
 }
 
-const objproducts = await KenzieFood.getPublic()
+const objproducts = await KenzieFood.getPublic();
 
 
 export{objproducts, KenzieFood};

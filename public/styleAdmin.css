@@ -295,7 +295,7 @@ button:hover {
     .indice {
         display: flex;
         justify-content: space-between;
-       margin: 0px 47px 0px 94px;
+        margin: 0px 48px 0px 21px;
     }
 
     .template {
@@ -327,12 +327,13 @@ button:hover {
         align-items: center;
         text-align: center;
         justify-content: space-between;
+        margin-bottom: 30px;
 
     }
 
     .products{
         display: flex;
-        width: 77vw;
+        width: 78vw;
         align-items: center;
         justify-content: space-between;
     }

@@ -81,10 +81,10 @@ class Filter {
 };
 
 
-buttonAll.addEventListener("click", Filter.validationAll)
-buttonBakery.addEventListener("click", Filter.validationBakery)
-buttonFruits.addEventListener("click", Filter.validationFruits)
-buttonDrinks.addEventListener("click", Filter.validationDrinks)
+buttonAll.addEventListener("click", Filter.validationAll);
+buttonBakery.addEventListener("click", Filter.validationBakery);
+buttonFruits.addEventListener("click", Filter.validationFruits);
+buttonDrinks.addEventListener("click", Filter.validationDrinks);
 
 
 Filter.FilterInput()
