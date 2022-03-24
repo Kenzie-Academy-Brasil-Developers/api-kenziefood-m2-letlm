@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/reset.css">
+    <link rel="stylesheet" href="/public/styleAdmin.css">
     <title>Admin</title>
 </head>
+
 <body>
-    
+
     <header>
-       <div class="nameHomepage">
-            <p>Kenzie </p>
-            <p>Food</p>
-       </div>
-       <div class="searchAdmin">
-            <input type="text">
+        <div class="nameHomepage">
+            <div class="letters">
+                <p class="textKenzie">Kenzie </p>
+                <p class="textFood">Food</p>
+            </div>
             <button class="adminProfile">
-                <img class="iconAdmin" src="/public/images/iconProfileAdmin.png alt="Página do administrador">
+                <img class="iconAdmin" src="/public/images/iconProfileAdmin.png" alt="Página do administrador">
             </button>
         </div>
+
+        <input type="text" name="search" placeholder="Pesquisar por produto">
 
     </header>
     <main>
         <div class="buttonsSearch">
             <button class="all"> Todos</button>
-            <button class="bread"><img class="iconBread" src="/public/images/iconBread.png" alt="Imagem de Pão">Panificadora</button>
-            <button class="fruits"><img class="iconFruits" src="/public/images/IconFruits.png" alt="Imagem de Frutas">Frutas</button>
-            <button class="wine"><img class="iconGlassWine" src="/public/images/iconGlassWine.png" alt="Imagem de Bebidas">Bebidas</button>
+            <button class="bread"><img class="iconBread" src="/public/images/iconBread.png"
+                    alt="Imagem de Pão">Panificadora</button>
+            <button class="fruits"><img class="iconFruits" src="/public/images/IconFruits.png" alt="Imagem de Frutas">
+                <span>Frutas</span></button>
+            <button class="wine">
+                <img class="iconGlassWine" src="/public/images/iconGlassWine.png" alt="Imagem de Bebidas"><span>
+                    Bebidas
+                </span>
+
+            </button>
             <button class="addProductCard">Adicionar novo produto</button>
         </div>
 
@@ -37,9 +49,11 @@
                 <span>Descrição</span>
                 <span>Ações</span>
 
-                <!-- <li> APENAS MODELO PARA VERIFICAR O CSS 
+                <!-- APENAS MODELO PARA VERIFICAR O CSS  -->
+
+                <li>
                     <div class="productsAndCategory">
-                        <img class="imgProduct" src="/public/images/iconBread.png" alt="">
+                        <img class="imgProduct" src="/public/images/imgTeste.png" alt="">
                         <span class="nameProduct">Panqueca de banana com aveia</span>
                         <span class="category">Bebidas</span>
                         <span class="category">Frutas</span>
@@ -50,32 +64,119 @@
                         <button class="editProduct"> <img src="/public/images/iconEdit.png" alt=""></button>
                         <button class="deleteProduct"> <img src="/public/images/iconDelete.png" alt=""></button>
                     </div>
-                </li> -->
+                </li>
             </ul>
 
         </div>
     </main>
 
-    <div id="modalStatusOk" class="showModalStatusOk">
-        <div class="boxModalStatus">
-            <div>
-                <span class="status">Status</span>
+    <!-- modal CADASTRO de produto POR ENQUANTO DEIXAR COMENTADO-->
+    <!-- <div id="modalEdit" class="showModalEdit">
+        <div class="boxModalEdit">
+            <div class="edit">
+                <span class="statusSpan">Cadastro de produto</span>
                 <button class="btnExit">X</button>
             </div>
-            <span class="messageStatus">Produto adicionado com sucesso</span>
+            <div class="modalForm">
+                <form action="#">
+                    <label for="">Nome do Produto</label>
+                    <input type="text" placeholder="Digitar o nome"required>
+                    <label for="">Descrição</label>
+                    <input type="text" placeholder="Digitar a descrição" required>
+                    <label for="">Categorias</label>
+                    <div class="btnsCategory">
+                        <button class="btnBread">Panificadora</button>
+                        <button class="btnFruits">Frutas</button>
+                        <button class="btnDrinks">Bebidas</button>
+                    </div>
+                    <label for="">Valor do Produto</label>
+                    <input type="text" placeholder="Digitar o valor aqui" required>
+                    <label for="">Link da imagem</label>
+                    <input type="text" placeholder="Inserir link" required>
+                    <button class="btnRegister">Cadastrar produto</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- modal edição de produto POR ENQUANTO DEIXAR COMENTADO-->
+    <!-- <div id="modalEdit" class="showModalEdit">
+        <div class="boxModalEdit">
+            <div class="edit">
+                <span class="statusSpan">Edição de produto</span>
+                <button class="btnExit">X</button>
+            </div>
+            <div class="modalForm">
+                <form action="#">
+                    <label for="">Nome do Produto</label>
+                    <input type="text" required>
+                    <label for="">Descrição</label>
+                    <input type="text" required>
+                    <label for="">Categorias</label>
+                    <div class="btnsCategory">
+                        <button class="btnBread">Panificadora</button>
+                        <button class="btnFruits">Frutas</button>
+                        <button class="btnDrinks">Bebidas</button>
+                    </div>
+                    <label for="">Valor do Produto</label>
+                    <input type="text" required>
+                    <label for="">Link da imagem</label>
+                    <input type="text" required>
+                    <button class="btnExc" >Excluir</button>
+                    <button class="btnSave">Salvar alterações</button>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <!-- modal exclusão de produto -->
+    <div id="modalDelete" class="showModalDelete">
+        <div class="boxModalDelete">
+            <div class="delete">
+                <span class="statusSpan">Exclusão de produto</span>
+                <button class="btnExit">X</button>
+            </div>
+            <div class="statusOver">
+                <span class="messageStatus">Tem certeza que deseja excluir este produto?</span>
+                <button class="yes">Sim</button>
+                <button class="no">Não</button>
+            </div>
+        </div>
+    </div>
+    <!-- modal status ok -->
+    <div id="modalStatusOk" class="showModalStatusOk">
+        <div class="boxModalStatus">
+            <div class="status">
+                <span class="statusSpan">Status</span>
+                <button class="btnExit">X</button>
+            </div>
+            <div class="statusOver">
+                <span class="messageStatus">Produto adicionado com sucesso</span>
+                <span class="listGreen"></span>
+            </div>
+
+        </div>
+    </div>
+    <!-- modal status error -->
+    <div id="modalStatusError" class="showModalStatusError">
+        <div class="boxModalStatus">
+            <div class="status">
+                <span class="statusSpan">Status</span>
+                <button class="btnExit">X</button>
+            </div>
+            <div class="statusOver">
+                <span class="messageStatus">Ocorreu algum erro, o produto não foi adicionado</span>
+                <span class="listRed"></span>
+            </div>
+
         </div>
     </div>
 
-    <div id="modalStatusError" class="showModalStatusError">
-        <div class="boxModalStatus">
-            <div>
-                <span class="status">Status</span>
-                <button class="btnExit">X</button>
-            </div>
-            <span class="messageStatus">Ocorreu algum erro, o produto não foi adicionado</span>
-        </div>
-    </div>
+
 
     <script type="module" src="/src/controllers/registerProducts.js"></script>
 </body>
+
 </html>

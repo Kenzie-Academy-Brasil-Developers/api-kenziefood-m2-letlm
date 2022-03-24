@@ -26,12 +26,14 @@
                 "Content-Type": "application/json"
             },
             "body": JSON.stringify(user)
-    })
+        })
 
         const data = await response.json()
         
-        Local.tokenUser.token = {...data}
+        Local.tokenUser.token = data
         localStorage.setItem('token', JSON.stringify(Local.tokenUser))
+
+        return data
     }
 
 
