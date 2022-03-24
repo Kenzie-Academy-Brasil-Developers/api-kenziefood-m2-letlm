@@ -9,15 +9,16 @@ class Login {
 
     static acessLogin(event) {
     
-        event.preventDefault()
-        const forms = document.querySelector("form")
+        event.preventDefault();
+        const forms = document.querySelector("form");
         const newLogin = {}
 
         for (let i = 0; i < forms.length; i++) {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return this.modalDataError()
+                    return this.modalDataError();
+
                 }
                 newLogin[name] = value
             }
@@ -28,11 +29,11 @@ class Login {
             .then(data => {
     
                 if (data.error === "password invalid") {
-                    this.modalUserPass()
+                    this.modalUserPass();
                 } else if (data.error === `Email: ${newLogin.email} does not exists`) {
-                    this.modalUserEmail()
+                    this.modalUserEmail();
                 } else {
-                    window.location.href = "/src/pages/adminHomePage.html"
+                    window.location.href = "/src/pages/adminHomePage.html";
                 }
             })
     }
@@ -69,5 +70,7 @@ class Login {
 
 }
 
-Login.start()
+Login.start();
+
+
 export { Login }

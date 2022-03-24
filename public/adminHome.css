@@ -32,6 +32,45 @@ header {
 }
 
 
+li {
+    list-style: none;
+}
+
+.nameProduct {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.descriptionProduct {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-gray-3);
+}
+
+.category {
+    border-radius: 32px;
+    border: none;
+    width: 85px;
+    height: 19px;
+    color: var(--color-gray-3);
+    margin-top: 4px;
+    display: flex;
+    justify-content: flex-start;
+    background: var(--color-gray-2);
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.editProduct, .deleteProduct {
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+}
 
 .detailsLogoRegister{
     display: flex;
@@ -91,6 +130,15 @@ input:focus{
    
 }
 
+a {
+    
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 30px;
+}
+
+
 div button img {
     width: 19px;
     height: 20px;
@@ -100,7 +148,8 @@ div button img {
 header button {
     border: none;
     border-radius: 50%;
-    background-color: var(--color-gray-1);
+    background-color: var(--color-primary);
+    text-decoration: none;
 }
 
 #cart {
@@ -135,6 +184,7 @@ header input {
 main {
     display: flex;
     overflow: scroll;
+
 }
 
 main div {
@@ -191,6 +241,20 @@ main section {
     
 }
 
+.admin {
+    width: 109px;
+    height: 48px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    margin-top: -47px;
+    margin-left: 150px;
+    border: none;
+    text-decoration: none;
+}
+
 #emptyCar {
     width: 319px;
     height: 380px;
@@ -200,6 +264,8 @@ main section {
     font-size: 14px;
     color: var(--color-gray-3);
     overflow-y: auto;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -332,7 +398,6 @@ button:hover {
 .all {
     width: 88px;
     color: #000000;
-    background-color: var(--color-primary);
     width: 109px;
     height: 48px;
     border-radius: 32px;
@@ -426,11 +491,6 @@ button:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
     border: 1px solid #8c8e92;
-}
-
-
-#balance {
-    
 }
 
 .flex {

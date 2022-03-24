@@ -1,10 +1,10 @@
 import { KenzieFood } from "../requests/requests.js"
 
 class Register {
-    static btnForm = document.querySelector('button')
+    static btnForm = document.querySelector('button');
 
     static start() {
-        this.btnForm.addEventListener("click", this.acess.bind(this))
+        this.btnForm.addEventListener("click", this.acess.bind(this));
     }
 
     static acess(event) {
@@ -16,7 +16,7 @@ class Register {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return this.modalDataError()
+                    return this.modalDataError();
                 }
                     newAcess[name] = value
             }
@@ -30,7 +30,7 @@ class Register {
             } else if (data === "User Already Exists!"){
                 this.modalUserError()
             } else {
-                window.location.href = "/src/pages/login.html"
+                window.location.href = "/src/pages/login.html";
             }
         })
     }
@@ -45,18 +45,20 @@ class Register {
         })
     }
 
+
     static modalUserError(){
-        const dobleUser = document.querySelector(".modalRegisterDoble")
-        dobleUser.classList.add("showDoble")
+
+        const dobleUser = document.querySelector(".modalRegisterDoble");
+        dobleUser.classList.add("showDoble");
+
         dobleUser.addEventListener("click", (event) => {
             if(event.target.tagName === "BUTTON"){
                 dobleUser.classList.remove("showDoble")
-            }
-        })
-    }
-    
+    })
+    }    
 
 }
-Register.start()
+
+Register.start();
 
 export { Register }

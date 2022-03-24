@@ -15,16 +15,23 @@
     <header>
         <div class="nameHomepage">
             <div class="letters">
+                <a class="kenzieLogo" href="./adminHomePage.html">
                 <p class="textKenzie">Kenzie </p>
                 <p class="textFood">Food</p>
+                </a>
             </div>
-            <button class="adminProfile">
-                <img class="iconAdmin" src="/public/images/iconProfileAdmin.png" alt="Página do administrador">
-            </button>
+            
         </div>
-
+        <div class="search">
         <input type="text" name="search" placeholder="Pesquisar por produto">
+        <button class="iconSearch"><img src="/public/images/search.png" alt="search"></button>
+        </div>
+        <button class="adminProfile">
+            <img class="iconAdmin" src="/public/images/iconProfileAdmin.png" alt="Página do administrador">
+        </button>
+        
 
+        
     </header>
     <main>
         <div class="buttonsSearch">
@@ -43,13 +50,15 @@
         </div>
 
         <div class="template">
-            <ul class="productsAdd">
-              <div class="indice">
+            <div class="indice">
                 <span>Produto</span>
                 <span>Categorias</span>
                 <span>Descrição</span>
                 <span>Ações</span>
               </div>
+              
+            <ul class="productsAdd">
+              
 
                 <!-- APENAS MODELO PARA VERIFICAR O CSS  -->
 
@@ -76,6 +85,13 @@
     <div id="modalSttError" class="errorRegister">
         <div class="boxErrorProduct">
             <div class="statusError">
+=======
+    </div>  
+    <!-- modal status error -->
+    <!-- <div id="modalStatusError" class="showModalStatusError">
+        <div class="boxModalStatus">
+            <div class="status">
+
                 <span class="statusSpan">Status</span>
                 <button class="btnExit">X</button>
             </div>
@@ -95,12 +111,15 @@
             <button class="btnLogout">Logout</button>
         </div>
     </div>
+    </div> -->
+
 
     <div class="modalAdd"></div>
 
     <script type="module" src="/scriptAdmin.js"></script>
     <script type="module" src="../models/templateAdmin.js"></script>
     <script type="module" src="../controllers/registerProducts.js"></script>
+    <script type="module" src="../controllers/filterAdmin.js"></script>
 </body>
 
 </html>

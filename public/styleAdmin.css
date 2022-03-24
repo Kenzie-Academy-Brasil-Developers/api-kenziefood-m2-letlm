@@ -23,6 +23,7 @@ header {
     width: 100vw;
     height: 140px;
     align-items: center;
+    box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.25);
 }
 
 .nameHomepage {
@@ -37,6 +38,7 @@ header {
 .letters {
     display: flex;
     align-items: center;
+    margin-left: -10px;
 }
 
 .textKenzie {
@@ -76,6 +78,8 @@ input {
 
 .adminProfile {
     background: transparent;
+    border: none;
+    margin-right: 90px;
 }
 
 .buttonsSearch {
@@ -88,28 +92,47 @@ input {
     width: 800px;
 
 }
+button:hover {
+    cursor:pointer;
+}
+
+.buttonsSearch button:hover {
+    transition: 0.5s;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid #8c8e92;
+}
 
 .all {
     width: 88px;
     height: 48px;
     position: static;
-    background: var(--color-primary);
-    border: 1.5px solid var(--color-primary);
+    background: var(--color-gray-2);
+    border: none;
     box-sizing: border-box;
     border-radius: 30px;
-    flex: none;
-    margin: 0px 22px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    line-height: 19px;
     text-align: center;
-    color: var(--color-gray-1);
+    color: black;
     left: 0px;
     top: 0px;
     padding: 15px, 20px, 15px, 20px;
 
+}
+.search {
+    margin-top: -50px;
+}
+.iconSearch {
+    margin-left: -54px;
+    border: none;
+    background: transparent;
+}
+
+.letters :hover{
+    cursor:pointer;
 }
 
 .bread {
@@ -179,7 +202,7 @@ input {
     left: 582px;
     top: 122px;
     background: var(--color-gray-2);
-    border: 1.5px solid;
+    border: none;
     box-sizing: border-box;
     border-radius: 32px;
     margin-left: 15px;
@@ -204,15 +227,6 @@ input {
 }
 
 .addProductCard {
-    height: 48px;
-    width: 217px;
-    left: 1268px;
-    top: 116px;
-    padding: 15px, 20px, 15px, 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     width: 217px;
     height: 48px;
     left: 1268px;
@@ -231,7 +245,7 @@ input {
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 0px 15px 0px 400px;
+    margin: 0px -28px 0px 606px;
 }
 
 .modalProduct {
@@ -458,19 +472,26 @@ input {
     }
 
     .nameHomepage {
-        width: 85vw;
+        width: 78vw;
         justify-content: space-between;
     }
 
     input {
-        margin-top: -55px;
-        margin-left: 360px;
+        margin-top: 1px;
+        margin-left: 750px;
     }
 
     .buttonsSearch {
         width: 85vw;
     }
 
+    .iconAdmin {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 31px;
+        margin-top: 14px;
+    }
 
     main {
         display: flex;
@@ -479,6 +500,7 @@ input {
     }
 
     .imgProduct {
+
         width: 32px;
         height: 32px;
         margin: 0px 21px 0px 15px;
@@ -487,7 +509,7 @@ input {
     .indice {
         display: flex;
         justify-content: space-between;
-        margin: 0px 49px 0px 45px;
+        margin: 0px 48px 0px 21px;
     }
 
     .template {
@@ -519,13 +541,21 @@ input {
         align-items: center;
         text-align: center;
         justify-content: space-between;
+        margin-bottom: 30px;
 
     }
 
     .products {
         display: flex;
-        width: 84vw;
+        width: 78vw;
         align-items: center;
+        justify-content: space-between;
+    }
+    .nameProduct {
+        
+        margin-left: -393px;
+        font-weight: 500;
+        color: black;
     }
 
     .productsAndCategory {
@@ -537,6 +567,7 @@ input {
     }
 
     .descriptionAndAction {
+        margin-right: -132px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -545,7 +576,7 @@ input {
 
     .editProduct, .deleteProduct {
         background-color: transparent;
-        margin: 0px -64px 0px 59px;
+        margin: 0px 17px 0px -12px;
         border: none;
     }
 
@@ -816,12 +847,14 @@ input {
     display: flex;
     width: 42%;
     justify-content: center;
-    margin: 0px -60px 0px -90px;
     align-items: center;
+    width: 100px;
+    border-radius: 8px;
 }
 
 .descriptionProduct {
-    margin-left: 106px;
+    margin-right: 340px;
+    max-width: 116px;
 }
 
 .legend {
@@ -850,7 +883,13 @@ input {
     align-items: center;
     justify-content: center;
     width: 136px;
-    padding: 23px 20px 30px 10px;
+    padding: 28px;
+}
+
+.kenzieLogo {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
 }
 
 .categoryLegend {

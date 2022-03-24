@@ -1,6 +1,6 @@
-import { Local } from "../localstorage/localstorage.js"
+import { Local } from "../localstorage/localstorage.js";
 
-const totalPrice = document.querySelector("#price")
+const totalPrice = document.querySelector("#price");
 
 const uptadeTotal = () =>{
     totalPrice.innerHTML = Local.cart.reduce((soma, objeto) =>

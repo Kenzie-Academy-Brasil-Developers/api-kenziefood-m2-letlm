@@ -65,6 +65,154 @@ main {
 .formRegister {
     display: flex;
     flex-direction: column;
+    padding: 150px 100px 150px 100px;
+    border-radius: 100px;
+    background-color: #FF2253;
+    border: none;
+}
+
+.formRegister h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 50px;
+    font-weight: bold;
+    color: var(--color-background-1);
+}
+
+.formRegister input {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    border: none;
+    border-radius: 10px;
+}
+
+.formRegister button {
+    border: none;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    border-radius: 10px ;
+    font-weight: bold;
+}
+
+.formRegister button:hover{
+    cursor: pointer;
+    background-color: var(--color-gray-4);
+    color: var(--color-gray-1);
+}
+
+.closed {
+    position: absolute;
+    margin-left: 409px;
+    margin-top: 71px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.modalErrorRegister, .showModalErrorNull{ 
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 15px;
+    position: absolute;
+    top: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.aparecer {
+    display: flex; 
+}
+
+.boxModalErrorRegister, .boxModalError {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: -250px;
+    width: 200px;
+    height: 90px;
+    border: 2px solid var(--color-gray-1);
+    background-color: var(--color-gray-1);
+    border-radius: 5px;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#btnError{
+    background-color: var(--color-primary);
+    border: 2px solid white;
+    border-radius: 4px;
+    margin-top: 20px;
+    width: 50px;
+    height: 35px;
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 15px;
+    color: var(--color-white);
+}
+
+@media (max-width: 769){
+
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+header {
+    
+    height: 85px;
+    background-color: #FFF;
+    border-bottom: 1px solid black;
+    margin-bottom: 50px;
+}
+
+header > nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+nav img {
+    padding-left: 80px;
+    
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding-right: 80px;
+    font-size: 15px;
+}
+
+.details span {
+    font-weight: bold;
+    color: var(--color-black);
+}
+
+.details span a{
+    color: var(--color-white);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+}
+
+.formRegister {
+    display: flex;
+    flex-direction: column;
     padding: 125px 100px 125px 100px;
     border-radius: 100px;
     background-color: #FF2253;
@@ -195,4 +343,5 @@ main {
     font-family: 'Inter';
     font-weight: bold;
     font-size: 15px;
+
 }
