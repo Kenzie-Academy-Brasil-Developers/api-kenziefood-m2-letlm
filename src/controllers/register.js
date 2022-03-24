@@ -15,41 +15,45 @@ class Register {
         for (let i = 0; i < forms.length; i++) {
             const { name, value } = forms[i]
             if (name) {
-                // if (value === "") {
-                //     this.modalErrorNull()
+                if (value === "") {
+                    return this.modalErrorNull()
+                }
                     newAcess[name] = value
             }
             forms[i].value = ""
         }
         KenzieFood.register(newAcess)
+    
         .then(data => {
             if (data.status === "Error") {
-                this.modalError()
+                this.modalErrorNull()
+            } else if (data === "User Already Exists!"){
+                this.modalErrorNull()
             } else {
-                // window.location.href = "/src/pages/login.html"
+                window.location.href = "/src/pages/login.html"
             }
         })
     }
 
-    static modalError(){
-        const modal = document.querySelector("showModalErrorNull")
-        modal.classList.add("aparecer")
-        modal.addEventListener("click", (event) => {
-            if(event.target.tagName === "BUTTON"){
-                modal.classList.remove("aparecer")
-            }
-        })
-    }
-
-    // static modalErrorNull(){
-    //     const modalNull = document.querySelector("#modalError")
-    //     modalNull.classList.add("aparecer")
-    //     modalNull.addEventListener("click", (event) => {
+    // static modalError(){
+    //     const modal = document.querySelector("showModalErrorNull")
+    //     modal.classList.add("aparecer")
+    //     modal.addEventListener("click", (event) => {
     //         if(event.target.tagName === "BUTTON"){
-    //             modalNull.classList.remove("aparecer")
+    //             modal.classList.remove("aparecer")
     //         }
     //     })
     // }
+
+    static modalErrorNull(){
+        const modalNull = document.querySelector("#modalError")
+        modalNull.classList.add("aparecer")
+        modalNull.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalNull.classList.remove("aparecer")
+            }
+        })
+    }
     
 
 }

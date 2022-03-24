@@ -8,6 +8,7 @@ class Login {
     }
 
     static acessLogin(event) {
+    
         event.preventDefault()
         const forms = document.querySelector("form")
         const newLogin = {}
@@ -16,18 +17,22 @@ class Login {
             const { name, value } = forms[i]
             if (name) {
                 if (value === "") {
-                    return alert("Preencha os dados corretamente.")
+                    return alert("preencha o bglho")
                 }
                 newLogin[name] = value
             }
             forms[i].value = ""
         }
         KenzieFood.login(newLogin)
+
             .then(data => {
-                if (data.status === "Error") {
-                    alert("erro") // trocar por modal
+    
+                if (data.error === "password invalid") {
+                    alert("Senha invalida")
+                } else if (data.error === `Email: ${newLogin.email} does not exists`) {
+                    alert("Email invalido")
                 } else {
-                    alert("tudo ok") // trocar por modal
+                    window.location.href = "/src/pages/adminHomePage.html"
                 }
             })
     }
