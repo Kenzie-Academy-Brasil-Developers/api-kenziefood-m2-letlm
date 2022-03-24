@@ -431,6 +431,10 @@ input {
     align-items: center;
 } 
 
+.desaparecer{
+    display: none;
+}
+
 .aparecer{
     display: flex;
 }
