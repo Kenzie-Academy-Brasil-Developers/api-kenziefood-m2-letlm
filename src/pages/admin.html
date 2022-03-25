@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/reset.css">
+    <link rel="stylesheet" href="/public/styleAdmin.css">
+    <title>Admin</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="nameHomepage">
+            <div class="letters">
+                <a class="kenzieLogo" href="./adminHomePage.html">
+                <p class="textKenzie">Kenzie </p>
+                <p class="textFood">Food</p>
+                </a>
+            </div>
+            
+        </div>
+        <div class="search">
+        <input type="text" name="search" placeholder="Pesquisar por produto">
+        <button class="iconSearch"><img src="/public/images/search.png" alt="search"></button>
+        </div>
+        <button class="adminProfile">
+            <img class="iconAdmin" src="/public/images/iconProfileAdmin.png" alt="Página do administrador">
+        </button>
+        
+
+        
+    </header>
+    <main>
+        <div class="buttonsSearch">
+            <button class="all"> Todos</button>
+            <button class="bread"><img class="iconBread" src="/public/images/iconBread.png"
+                    alt="Imagem de Pão">Panificadora</button>
+            <button class="fruits"><img class="iconFruits" src="/public/images/IconFruits.png" alt="Imagem de Frutas">
+                <span>Frutas</span></button>
+            <button class="wine">
+                <img class="iconGlassWine" src="/public/images/iconGlassWine.png" alt="Imagem de Bebidas"><span>
+                    Bebidas
+                </span>
+
+            </button>
+            <button class="addProductCard">Adicionar novo produto</button>
+        </div>
+
+        <div class="template">
+            <div class="indice">
+                <span>Produto</span>
+                <span>Categorias</span>
+                <span>Descrição</span>
+                <span>Ações</span>
+              </div>
+              
+            <ul class="productsAdd">
+              
+
+                <!-- APENAS MODELO PARA VERIFICAR O CSS  -->
+
+            </ul>
+
+        </div>
+    </main>
+
+    <div id="modalSttOk" class="okRegister">
+        <div class="boxOkRegister">
+            <div class="statusOk">
+                <span class="statusSpan">Status</span>
+                <button class="btnExit">X</button>
+            </div>
+            <div class="statusOver">
+                <span class="messageStatusOk">Produto adicionado com sucesso</span>
+                <span class="listGreen"></span>
+            </div>
+        </div>
+    </div>
+    <div id="modalSttError" class="errorRegister">
+        <div class="boxErrorProduct">
+            <div class="statusError">
+                <span class="statusSpan">Status</span>
+                <button class="btnExit">X</button>
+            </div>
+            <div class="statusOver">
+                <span class="messageStatus">Ocorreu algum erro, o produto não foi adicionado</span>
+                <span class="listRed"></span>
+            </div>
+        </div>
+    </div> 
+
+    <div id="modalLogout" class="logoutAdmin">
+        <div class="boxLogout">
+            <span class="nameAdmin"></span>
+        </div>
+        <div class="divLogout">
+            <button class="btnLogout">Logout</button>
+        </div>
+    </div>
+    </div>
+
+    <div id="modalLogout" class="logoutAdmin">
+        <div class="divLogout">
+            <button class="btnLogout">Logout</button>
+        </div>
+        <div class="exitLogin"> X </div>
+    </div>
+
+    <div class="modalAdd"></div>
+
+    <script type="module" src="/scriptAdmin.js"></script>
+    <script type="module" src="../models/templateAdmin.js"></script>
+    <script type="module" src="../controllers/registerProducts.js"></script>
+    <script type="module" src="../controllers/filterAdmin.js"></script>
+</body>
+
+</html>

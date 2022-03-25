@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/reset.css">
+    <link rel="stylesheet" href="../../public/register.css">
+    <title>Cadastrar</title>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <img src="../../public/images/kenziefoodlogo.png" alt="logo kenzie">
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <a class="closed" href="/index.html">X</a>
+            <form action="#" class="formRegister">
+                <h2>Criar seu cadastro</h2>
+                <input type="text" name="name" placeholder="Digite seu nome">
+                <input type="email" name="email" placeholder="Digite seu email">
+                <input type="password" name="password" placeholder="Digite sua senha">
+                <button>Cadastrar</button>
+                <div class="details">
+                    <span>Ja é cadastrado? <a href="../pages/login.html">Entrar</a></span>
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <div id="modalData" class="modalErrorData">
+        <div class="boxData">
+            <span id="errorFixed"> Preencha os dados corretamente! </span>
+            <button id="btnError" type="button">X</button>
+        </div>
+    </div>
+
+    <div id="modalRegister" class="modalRegisterDoble">
+        <div class="boxDoble">
+            <span id="errorFixed"> Usuário já cadastrado! </span>
+            <button id="btnError" type="button">X</button>
+        </div>
+    </div>
+
+    <script type="module" src="/src/controllers/register.js"></script>
+</body>
+
+</html>

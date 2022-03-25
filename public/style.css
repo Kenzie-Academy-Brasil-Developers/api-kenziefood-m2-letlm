@@ -1,0 +1,557 @@
+:root{
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-1: #F8F9FA;
+    --color-gray-2: #E9ECEF;
+    --color-gray-3: #868E96;
+    --color-gray-4: #212529;
+    --color-secondary: #4ACA94;
+    --color-secondary-50: #E4F7EF;
+    --color-primary: #FF2253;
+    --color-primary-50: #FFE9EE;
+    --color-background-1 : #FFF7F4;
+  }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+header {
+    height: 72px;
+    min-width: 300px;
+    height: 115px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    margin-left: 27px;
+}
+
+
+
+.detailsLogoRegister{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.detailsLogoRegister img{
+    margin-right: 70px;
+}
+
+.detailsLogoRegister a{
+    text-decoration: none;
+    background-color: var(--color-primary);
+    color: var(--color-background-1);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.detailsLogoRegister a:hover{
+    cursor: pointer;
+    background-color: var(--color-gray-4);
+    color: var(--color-gray-1);
+}
+
+input:focus{
+    outline: none;
+    
+}
+
+.inputButton {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--color-gray-2);
+    border-radius: 12px;
+    width:  312px;;
+    height: 20px;
+    padding: 10px 3px 13px 7px;
+}
+
+.inputButton:focus-within{
+    border: 1.5px solid var(--color-gray-4);
+}
+
+.inputButton button{
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-gray-2);
+    
+}
+
+.inputButton button:hover {
+    transition: 0.4s;
+   
+}
+
+div button img {
+    width: 19px;
+    height: 20px;
+    margin-right: 3px;
+}
+
+header button {
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-gray-1);
+}
+
+#cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-top: 10px;
+}
+
+h1 {
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+header img {
+    width: 123px;
+    height: 40px;
+}
+
+header input {
+    width: 200px;
+    height: 33px;
+    border-radius: 30px;
+    margin: 10px 0;
+    border: none;
+    background-color: var(--color-gray-2);
+    
+}
+
+
+main {
+    display: flex;
+    overflow: scroll;
+}
+
+main div {
+    width: 303px;
+    height: 397px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main div h2 {
+    font-weight: bold;
+}
+
+main img {
+    max-width: 300px;
+    width: 300px;
+    height: 200px;
+}
+
+main img:hover {
+    transition: 0.4s;
+    border: solid var(--color-primary) 3px;
+}
+
+main section {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.price {
+    color: var(--color-black);
+    font-weight: bold;
+}
+
+.title {
+    background-color: var(--color-primary);
+    width: 320px;
+    height: 56px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 12px 10px;
+}
+
+#emptyCar img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    
+}
+
+#emptyCar {
+    width: 319px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-gray-1);
+    font-size: 14px;
+    color: var(--color-gray-3);
+    overflow-y: auto;
+    
+}
+
+#emptyCar h2{
+    font-weight: bolder;
+    color: #000000;
+    margin-left: 13px;
+    font-size: 12px;
+}
+
+#itemsToBuy {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    width: 320px;
+    background: var(--color-gray-1);
+    flex-direction: column;
+}
+
+.scroll{
+    max-height: 100px;
+    overflow: hidden;
+}
+
+#itemsToBuy div {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#itemsToBuy section {
+    display: flex;
+    justify-content: space-between;
+}
+
+#itemsToBuy img {
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+}
+
+#itemsToBuy p, #itemsToBuy span {
+    margin-bottom: 10px;
+}
+
+#itemsToBuy p {
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.typeBasket {
+    color: var(--color-gray-36);
+    font-size: 14px;
+}
+
+.priceBasket {
+    color: var(--color-gray-4);
+}
+
+#itemsToBuy button {
+    width: 26px;
+    height: 26px;
+    border: none;
+    background: var(--color-white);
+}
+
+#emptyCar .disk {
+    display: none;
+}
+
+main img {
+    border: 3px solid var(--color-primary-50);
+    border-radius: 8px;
+}
+
+main h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+main p {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--color-gray-3);
+}
+
+.add {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    background-image: url(../public/images/ButtonCart.png);
+    margin-bottom: 10px;
+}
+
+.add:hover{
+   background-color: #4ACA94;
+   background-image: url(../public/images/btnCartHover.png);
+}
+
+.button {
+    display: flex;
+    margin: 20px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.bakery, .fruits, .drinks {
+    width: 109px;
+    height: 48px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: var(--color-gray-4);
+    margin-top: -15px;
+    margin-left: 10px;
+    border: none;
+}
+
+.all {
+    width: 88px;
+    color: #000000;
+    width: 109px;
+    height: 48px;
+    border-radius: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    color: var(--color-gray-4);
+    margin-top: -15px;
+    margin-left: 10px;
+    border: none;
+}
+
+.bakery {
+    width: 170px;
+    background-color: rgba(255, 247, 244, 1);
+    color: #000000;
+}
+
+.fruits {
+    width: 123px;;
+}
+
+.drinks {
+    width: 136px;
+    background: rgba(243, 238, 245, 1);
+    color: #000000;
+
+}
+
+.button button {
+    
+    transition: 0.4s;
+}
+
+#mainProducts .categoria{
+    border-radius: 32px;
+    border: none;
+    width: 85px;
+    height: 19px;
+    color: var(--color-gray-3);
+    background-color: transparent;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+#mainProducts .remove{
+    display: none;
+}
+
+#emptyCar .categoria {
+    margin-left: 80px;
+    margin-top: -46px;
+    border-radius: 32px;
+    border: none;
+    width: 109px;
+    height: 19px;
+    color: var(--color-gray-3);
+    background-color: transparent;
+    text-align: left;
+}
+
+#emptyCar .remove{
+    border: none;
+    background-color: var(--color-gray-1);
+    margin-bottom: -67px;
+    margin-left: 267px;
+}
+
+
+#emptyCar .add{
+    display: none;
+}
+
+#emptyCar .teste{
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    flex-direction: row;
+    margin-left: 9px;
+    margin-bottom: 12px;
+    
+}
+
+#emptyCar .price {
+    margin: -15px 0px 0px -105px;
+}
+
+.button button:hover {
+    transition: 0.5s;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid #8c8e92;
+}
+
+.teste products {
+    
+    width: 303px;
+    height: 397px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.quantity {
+    margin-top: 18px;
+    margin-left: 15px;
+}
+
+.qtNumber {
+    margin-right: 10px;
+    margin-top: 18px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 290px;
+    height: 120px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.flex section {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px 0 0;
+    background-color: var(--color-gray-1);
+    height: 50px;
+    width: 309px;
+    margin-left: -14px;
+}
+
+@media(min-width: 768px) {
+    body {
+        display: flex;
+        justify-content: center;
+        max-width: 1600px;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    header {
+        padding: 0px 30px;
+        min-width: 700px;
+        align-items: center;
+        height: 80px;
+        background: var(--color-white);
+        margin-bottom: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        box-shadow: 0px 0px 40px -18px rgba(0, 0, 0, 0.25);
+    }
+
+    .button {
+        justify-content: flex-start;
+    }
+
+}
+
+@media(min-width: 1024px) {
+    main {
+        width: 1000px;
+    }
+
+    header {
+        padding: 0px 40px;
+    }
+
+    .vitrine {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .title {
+        border-radius: 12px 12px 0px 0px;
+    }
+    #cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: -70px;
+        height: 521px;
+        
+    }
+    #emptyCar {
+        display: flex;
+    }
+
+}
+
+@media(min-width:1440px) {
+    header {
+        padding: 0px 70px;
+    }
+
+    .button {
+        padding: 0px 25px;
+    }
+}
+
+@media(min-width:1600px) {
+    header {
+        padding: 0px 150px;
+    }
+
+    .button {
+        padding: 0px 129px;
+    }
+}
