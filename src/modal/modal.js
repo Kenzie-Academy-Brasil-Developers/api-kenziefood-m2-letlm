@@ -164,19 +164,7 @@ class ModalProduct {
             }
 
             RequestAdmin.createdProduct(data)
-<<<<<<< HEAD
                 
-=======
-                .then(data => {
-
-                    if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
-                      
-                        div.classList.add("desaparecer")
-                    } else {
-                        
-                        div.classList.add("desaparecer")
-
->>>>>>> 5f20a1aba3188c9ef615e5abfba2ee212824522d
             .then(async data => {
                 
                 if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
