@@ -4,17 +4,16 @@ import {RequestAdmin} from "../requests/requestsAdmin.js";
 class ModalProduct {
     static divAddModal = document.querySelector(".modalAdd");
 
-
     static newProduct() {
         const getButton = document.querySelector(".addProductCard");
         getButton.addEventListener("click", this.openModal.bind(this));
     }
 
 
-    //static deleteProduct() {
-      //   const getButtonDelete = 
-       //  getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
-    //}
+    // static deleteProduct() {
+    //     const getButtonDelete = 
+    //     getButtonDelete.addEventListener("click", this.openModalDelete.bind(this))
+    // }
 
     static divAddModal = document.querySelector(".modalAdd");
 
@@ -47,7 +46,7 @@ class ModalProduct {
         const inputImage        = document.createElement("input");
         const btnRegister       = document.createElement("button");
 
-        
+
         divCategory.classList.add("category");
         labelFruits.classList.add("legend");
         labelDrinks.classList.add("legend");
@@ -147,6 +146,7 @@ class ModalProduct {
 
         btnRegister.addEventListener("click", (event) => {
             event.preventDefault();
+            console.log("teste")
 
             const data = {}
 
@@ -164,16 +164,39 @@ class ModalProduct {
             }
 
             RequestAdmin.createdProduct(data)
+                
             .then(async data => {
                 
                 if (data.error === `${data.error}` || data.msg === `${data.msg}`) {
-                    alert("Erro ao cadastrar o produto, tente novamente!");
+                    this.modalErrorProduct()
                     div.classList.add("desaparecer");
                 } else {
                     div.classList.add("desaparecer");
+                    this.modalProductOk()
                     await Vitrine.productsInAdminPage();
-                    }
-                })
+                }
+            })
+        })
+    }
+    
+
+    static modalErrorProduct(){
+        const modalError = document.querySelector(".errorRegister")
+        modalError.classList.add("showProductError")
+        modalError.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalError.classList.remove("showProductError")
+            }
+        })
+    }
+
+    static modalProductOk(){
+        const modalOk = document.querySelector(".okRegister")
+        modalOk.classList.add("showProductOk")
+        modalOk.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modalOk.classList.remove("showProductOk")
+            }
         })
     }
 
@@ -327,7 +350,7 @@ class ModalProduct {
         buttonExit.addEventListener("click", () => {
             div.classList.add("desaparecer");
         })
-
+        
         btnRegister.addEventListener("click", async (event) => {
             event.preventDefault();
 
@@ -429,6 +452,22 @@ class ModalProduct {
 
         btnNo.addEventListener("click", () => {
             div.classList.add("desaparecer");
+        })
+    }
+
+    static logout(){
+        const logOff = document.querySelector(".adminProfile")
+        logOff.addEventListener("click", () => {
+            this.modalLogout.bind(this)})
+    }
+
+    static modalLogout(){
+        const modals = document.querySelector(".logoutAdmin")
+        modals.classList.add("showLogout")
+        modals.addEventListener("click", (event) => {
+            if(event.target.tagName === "BUTTON"){
+                modals.classList.remove("showLogout")
+            }
         })
     }
 }

@@ -69,6 +69,7 @@ class Vitrine {
         
         buttonDelete.addEventListener("click", () => {
             ModalProduct.openModalDelete(id);
+            
         })
         
         button.appendChild(imgButton);
@@ -88,4 +89,5 @@ class Vitrine {
         }
 }
 
+    
 export {Vitrine}

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,9 @@
     <link rel="stylesheet" href="/public/login.css">
     <title>Login</title>
 </head>
+
 <body>
-    
+
     <header>
         <nav>
             <img src="../../public/images/kenziefoodlogo.png" alt="logo kenzie">
@@ -30,13 +32,27 @@
             </form>
         </section>
     </main>
-    
-    <div id="modalError" class="showModalError">
-        <div class="boxModalError">
-            <span id="errorFix"> Usuário ou senha incorretos!</span>
-            <button id="btnExit" type="button">Fechar</button>
+
+    <div id="modalData" class="modalErrorData">
+        <div class="boxData">
+            <span id="errorFixed"> Preencha os dados corretamente! </span>
+            <button id="btnError" type="button">X</button>
         </div>
     </div>
+    <div id="modalEmailError" class="modalEmail">
+        <div class="boxUserEmail">
+            <span id="errorFixed"> Email incorreto! </span>
+            <button id="btnError" type="button">X</button>
+        </div>
+    </div>
+    <div id="modalPassError" class="modalPassword">
+        <div class="boxUserPass">
+            <span id="errorFixed"> Senha incorreta! </span>
+            <button id="btnError" type="button">X</button>
+        </div>
+    </div>
+    
     <script type="module" src="/src/controllers/login.js"></script>
 </body>
+
 </html>

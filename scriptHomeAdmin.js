@@ -1,3 +1,10 @@
-import { Vitrine } from "./src/models/templateAdmin.js";
+import { VitrineAdminPage } from "./src/models/templateAdminHome.js";
+import {addProductsAdmin} from "./src/controllers/addAdminPage.js"
 
-Vitrine.productsAdminHomePage();
+VitrineAdminPage.productsAdminHomePage()
+
+
+const sectionProducts = document.getElementById("mainProducts")
+
+addProductsAdmin.listProductsInCart()
+sectionProducts.addEventListener("click", addProductsAdmin.addProducts.bind(addProductsAdmin))

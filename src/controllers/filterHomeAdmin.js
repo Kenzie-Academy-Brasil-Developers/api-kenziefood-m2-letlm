@@ -1,4 +1,4 @@
-import {Vitrine} from "../models/templateAdmin.js"
+import { VitrineAdminPage } from "../models/templateAdminHome.js";
 import { RequestAdmin } from "../requests/requestsAdmin.js"
 
 const buttonAll     = document.querySelector(".all");
@@ -10,14 +10,14 @@ const inputPesquisa = document.querySelector(".input");
 
 class Filter {
 
-    static ul = document.querySelector("#mainProducts")
+    static main = document.querySelector("#mainProducts")
     static async listCategories(p){
-        Filter.ul.innerHTML = ""
+        this.main.innerHTML = ""
 
         p.forEach((products) => {
-            const productsVitrine = Vitrine.createVitrineAdmin(products)
+            const productsVitrine = VitrineAdminPage.createVitrine(products)
 
-            Filter.ul.appendChild(productsVitrine)
+            this.main.appendChild(productsVitrine)
         })
     }
 
