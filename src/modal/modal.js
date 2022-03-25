@@ -172,23 +172,23 @@ class ModalProduct {
                     div.classList.add("desaparecer");
                 } else {
                     div.classList.add("desaparecer");
-                    this.modalProductOk()
                     await Vitrine.productsInAdminPage();
+                    this.modalProductOk()
                 }
             })
         })
     }
     
 
-    static modalErrorProduct(){
-        const modalError = document.querySelector(".errorRegister")
-        modalError.classList.add("showProductError")
-        modalError.addEventListener("click", (event) => {
-            if(event.target.tagName === "BUTTON"){
-                modalError.classList.remove("showProductError")
-            }
-        })
-    }
+    // static modalErrorProduct(){
+    //     const modalError = document.querySelector(".errorRegister")
+    //     modalError.classList.add("showProductError")
+    //     modalError.addEventListener("click", (event) => {
+    //         if(event.target.tagName === "BUTTON"){
+    //             modalError.classList.remove("showProductError")
+    //         }
+    //     })
+    // }
 
     static modalProductOk(){
         const modalOk = document.querySelector(".okRegister")
@@ -210,15 +210,15 @@ class ModalProduct {
         })
     }
 
-    static modalProductOk(){
-        const modalOk = document.querySelector(".okRegister")
-        modalOk.classList.add("showProductOk")
-        modalOk.addEventListener("click", (event) => {
-            if(event.target.tagName === "BUTTON"){
-                modalOk.classList.remove("showProductOk")
-            }
-        })
-    }
+    // static modalProductOk(){
+    //     const modalOk = document.querySelector(".okRegister")
+    //     modalOk.classList.add("showProductOk")
+    //     modalOk.addEventListener("click", (event) => {
+    //         if(event.target.tagName === "BUTTON"){
+    //             modalOk.classList.remove("showProductOk")
+    //         }
+    //     })
+    // }
 
     static async openModalEdit(productId) {
 
@@ -383,8 +383,7 @@ class ModalProduct {
                 if (name && type !== "radio") {
                     data[name] = value
                 } else if (checked) {
-                    console.log(form[i])
-                    console.log(value)
+
                     data["categoria"] = value
                 }
 

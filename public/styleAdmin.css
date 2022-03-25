@@ -328,14 +328,11 @@ button:hover {
 
 
 .errorRegister {
-    width: 100vw;
-    height: 100vh;
+    position: absolute;
     top: 0px;
     left: 0px;
     z-index: 2000;
     display: none;
-    margin-left: 800px;
-    margin-top: 800px;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -388,8 +385,6 @@ button:hover {
 
 
 .okRegister {
-    width: 100vw;
-    height: 100vh;
     top: 0px;
     left: 0px;
     z-index: 2000;
@@ -612,8 +607,6 @@ button:hover {
         left: 0px;
         z-index: 2000;
         display: none;
-        margin-left: 800px;
-        margin-top: 800px;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -663,8 +656,6 @@ button:hover {
         left: 0px;
         z-index: 2000;
         display: none;
-        margin-left: 1013px;
-        margin-top: 885px;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -673,7 +664,6 @@ button:hover {
     .showProductOk {
         display: flex;
         position: absolute;
-        justify-content: flex-end;
     }
     .boxOkRegister {
         background-color: var(--color-white);
